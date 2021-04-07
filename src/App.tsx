@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import logo from './assets/svg/logo.svg';
-import mesh from './assets/images/mesh-png.png';
-// import mesh from './assets/svg/mesh.svg';
+// import mesh from './assets/images/mesh-png.png';
+import mesh from './assets/svg/mesh.svg';
 import icon1 from './assets/svg/icon-1.svg';
 import icon2 from './assets/svg/icon-2.svg';
 import icon3 from './assets/svg/icon-3.svg';
@@ -27,6 +27,7 @@ const DuetLogo = styled.div`
 const DuetIntro = styled.div`
   position: relative;
   height: 370px;
+  /* background-color: #1ac25a; */
 `
 
 const Mesh = styled.div`
@@ -39,7 +40,7 @@ const Brand = styled.div`
   font-size: 50px;
   font-family: samsung;
   position: absolute;
-  padding-top: 12.5%;
+  padding-top: 11%;
   z-index: 2;
   width: 100%;
 `
@@ -50,7 +51,7 @@ const SubTitle = styled.div`
   font-size: 20px;
   font-family: poppinsLight;
   position: absolute;
-  padding-top: 17.6%;
+  padding-top: 16.2%;
   width: 100%;
   z-index: 2;
 `
@@ -119,7 +120,10 @@ const BoxContent = styled.div`
 const CenterTitle = styled.div`
   position: relative;
   height: 250px;
-  padding-top: 15%;
+  /* padding-top: 15%; */
+  /* background-color: #1cb93e; */
+  line-height: 126px;
+  margin-top: 200px;
 `
 
 const CTBigText = styled.div`
@@ -130,6 +134,7 @@ const CTBigText = styled.div`
   font-family: samsung;
   z-index: 1;
   width: 100%;
+  /* background-color: #243a10; */
 `
 
 const CTSmallText = styled.div`
@@ -137,7 +142,7 @@ const CTSmallText = styled.div`
   font-size: 50px;
   font-family: samsung;
   position: absolute;
-  padding-top: 2.8%;
+  /* padding-top: 2.8%; */
   z-index: 2;
   width: 100%;
 `
@@ -356,7 +361,7 @@ function App() {
       <DuetLogo><img src={logo} alt="logo" /></DuetLogo>
 
       <DuetIntro>
-        <Mesh><img width="100%" src={mesh} alt="mesh" /></Mesh>
+        <Mesh><img width="90%" src={mesh} alt="mesh" /></Mesh>
         <Brand>A Multi-chain Synthetic Asset Protocol</Brand>
         <SubTitle>Duet enables on/off-ramp between traditional real assets 
         and high-growth crypto assets</SubTitle>
