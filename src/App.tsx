@@ -20,8 +20,6 @@ const Body = styled.div`
 `
 
 const DuetLogo = styled.div`
-  // width: 154px;
-  // height: 80px;
   padding-top: 40px;
   padding-bottom: 120px;
 `
@@ -41,9 +39,9 @@ const Brand = styled.div`
   font-size: 50px;
   font-family: samsung;
   position: absolute;
-  padding-left: 260px;
-  padding-top: 165px;
+  padding-top: 12.5%;
   z-index: 2;
+  width: 100%;
 `
 
 const SubTitle = styled.div`
@@ -52,8 +50,8 @@ const SubTitle = styled.div`
   font-size: 20px;
   font-family: poppinsLight;
   position: absolute;
-  padding-left: 278px;
-  padding-top: 250px;
+  padding-top: 17.6%;
+  width: 100%;
   z-index: 2;
 `
 
@@ -120,16 +118,8 @@ const BoxContent = styled.div`
 
 const CenterTitle = styled.div`
   position: relative;
-  height: 200px;
-  padding-top: 200px;
-  padding-left: 480px;
-`
-
-const CenterTitleRU = styled.div`
-  position: relative;
-  height: 200px;
-  padding-top: 200px;
-  padding-left: 300px;
+  height: 250px;
+  padding-top: 15%;
 `
 
 const CTBigText = styled.div`
@@ -139,6 +129,7 @@ const CTBigText = styled.div`
   font-size: 100px;
   font-family: samsung;
   z-index: 1;
+  width: 100%;
 `
 
 const CTSmallText = styled.div`
@@ -146,19 +137,9 @@ const CTSmallText = styled.div`
   font-size: 50px;
   font-family: samsung;
   position: absolute;
-  padding-left: 90px;
-  padding-top: 35px;
+  padding-top: 2.8%;
   z-index: 2;
-`
-
-const CTSmallTextRU = styled.div`
-  color: #FFFFFF;
-  font-size: 50px;
-  font-family: samsung;
-  position: absolute;
-  padding-left: 200px;
-  padding-top: 35px;
-  z-index: 2;
+  width: 100%;
 `
 
 const KeyFeature = styled.div`
@@ -368,6 +349,7 @@ const DivWidth = styled.div`
   padding-right: 30px;
 `
 
+
 function App() {
   return (
     <Body>
@@ -537,10 +519,10 @@ function App() {
         </RMDiv6>
       </RoadMap>
 
-      <CenterTitleRU>
+      <CenterTitle>
         <CTBigText>Receive updates</CTBigText>
-        <CTSmallTextRU>Receive updates</CTSmallTextRU>
-      </CenterTitleRU>
+        <CTSmallText>Receive updates</CTSmallText>
+      </CenterTitle>
 
       <Submit>
         <SubmitInput placeholder="Enter Your Email" />
