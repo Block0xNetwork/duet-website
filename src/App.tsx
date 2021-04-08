@@ -28,12 +28,15 @@ const DuetLogo = styled.div`
 const DuetIntro = styled.div`
   position: relative;
   height: 370px;
+  /* width: 100%; */
   /* background-color: #1ac25a; */
 `
 
 const Mesh = styled.div`
   position: absolute;
   z-index: 1;
+  width: 100%;
+  /* background-color: #451ed4; */
 `
 
 const Brand = styled.div`
