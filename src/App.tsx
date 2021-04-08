@@ -27,7 +27,7 @@ const DuetLogo = styled.div`
 
 const DuetIntro = styled.div`
   position: relative;
-  height: 370px;
+  height: 570px;
   /* width: 100%; */
   /* background-color: #1ac25a; */
 `
@@ -55,7 +55,7 @@ const SubTitle = styled.div`
   font-size: 20px;
   font-family: poppinsLight;
   position: absolute;
-  padding-top: 16.2%;
+  padding-top: 15.3%;
   width: 100%;
   z-index: 2;
 `
@@ -162,6 +162,7 @@ const KFimage = styled.div`
 
 const TxtCircle = styled.div`
   display: flex;
+  margin-top: 20px;
 `
 
 const KFTxtBorder = styled.div`
@@ -171,21 +172,45 @@ const KFTxtBorder = styled.div`
 `
 
 const KFContent = styled.div`
-  color: #FFFFFF;
+  color: #5574FF;
+  /* color: #5771FE; */
   font-size: 16px;
+  font-family: poppinsRegular;
+  font-weight: bold;
+  /* opacity: 0.59; */
+  text-align: right;
+  width: 335px;
+`
+
+const KFContentSmall = styled.div`
+  color: #FFFFFF;
+  font-size: 13px;
   font-family: poppinsLight;
-  opacity: 0.59;
+  opacity: 0.5;
   text-align: right;
   width: 280px;
+  margin-left: 55px;
 `
 
 const KFContent2 = styled.div`
-  color: #FFFFFF;
+  color: #5574FF;
+  /* color: #5771FE; */
   font-size: 16px;
-  font-family: poppinsLight;
-  opacity: 0.59;
+  font-family: poppinsRegular;
+  font-weight: bold;
+  /* opacity: 0.59; */
   text-align: left;
   width: 280px;
+`
+
+const KFContentSmall2 = styled.div`
+  color: #FFFFFF;
+  font-size: 13px;
+  font-family: poppinsLight;
+  opacity: 0.5;
+  text-align: left;
+  width: 280px;
+  margin-left: 50px;
 `
 
 const RoadMap = styled.div`
@@ -293,7 +318,7 @@ const RoadMapTitle = styled.div`
   background: linear-gradient(270deg, #AF0BD9 0%, #5574FF 100%);
   -webkit-background-clip: text;
   color: transparent;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   text-align: left;
 `
 
@@ -320,6 +345,7 @@ const SubmitInput = styled.input`
   font-size: 18px;
   border-radius: 4px;
   border: none;
+  text-indent: 20px;
 `
 
 const SubmitButton = styled.button`
@@ -420,20 +446,29 @@ function App() {
             <SmallCircle />
           </TxtCircle>
 
+          <KFContentSmall>boosting capital utilization while 
+            enhancing system robustness</KFContentSmall>
+
           <TxtCircle>
             <KFContent>Any asset class</KFContent>
             <SmallCircle />
           </TxtCircle>
+
+          <KFContentSmall>can be minted on-chain</KFContentSmall>
 
           <TxtCircle>
             <KFContent>Collateral earning multiplier</KFContent>
             <SmallCircle />
           </TxtCircle>
 
+          <KFContentSmall>reduce the opportunity cost of user migration</KFContentSmall>
+
           <TxtCircle>
             <KFContent>DeFi coupling modules</KFContent>
             <SmallCircle />
           </TxtCircle>
+
+          <KFContentSmall>empowering various on-chain protocol combinations</KFContentSmall>
         </KFTxtBorder>
 
         <KFimage><img src={keyfeature} alt="keyfeature" /></KFimage>
@@ -444,20 +479,30 @@ function App() {
             <KFContent2>Music theme NFT</KFContent2>
           </TxtCircle>
 
+          <KFContentSmall2>offering entertaining gamification schemes</KFContentSmall2>
+
           <TxtCircle>
             <SmallCircle />
             <KFContent2>Unique token releasing scheme</KFContent2>
           </TxtCircle>
 
+          <KFContentSmall2>to ensure project sustainability</KFContentSmall2>
+          
           <TxtCircle>
             <SmallCircle />
             <KFContent2>Broader collateral acceptance</KFContent2>
           </TxtCircle>
 
+          <KFContentSmall2>including yield-bearing assets 
+            (yToken, cToken, LPToken, etc.)</KFContentSmall2>
+          
           <TxtCircle>
             <SmallCircle />
             <KFContent2>Governed by DAO</KFContent2>
           </TxtCircle>
+
+          <KFContentSmall2>delegate power to the users in a 
+            transparent & censorship-resistance way</KFContentSmall2>
         </KFTxtBorder>
       </KeyFeature>
 
