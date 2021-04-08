@@ -612,7 +612,7 @@ function checkEmail(email: string) {
 
 //----------------------------------------------------------------
 // TEMP SOLUTION
-let baseUrl = 'http://62.234.169.68:8082';
+let baseUrl = 'https://api.nftbazaar.org'
 async function saveEmail(email: string) {
   let batch = { email: email }
   let response: Response
