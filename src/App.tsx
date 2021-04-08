@@ -23,6 +23,7 @@ const Body = styled.div`
 const DuetLogo = styled.div`
   padding-top: 40px;
   padding-bottom: 120px;
+  padding-right: 30px;
 `
 
 const DuetIntro = styled.div`
