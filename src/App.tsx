@@ -23,7 +23,7 @@ const Body = styled.div`
 const DuetLogo = styled.div`
   padding-top: 40px;
   padding-bottom: 120px;
-  padding-right: 30px;
+  padding-right: 40px;
 `
 
 const DuetIntro = styled.div`
@@ -411,7 +411,7 @@ function App() {
       </DuetIntro>
 
       <CenterTitle>
-        <CTBigText>Overview</CTBigText>      
+        <CTBigText>Overview</CTBigText>
         <CTSmallText>Overview</CTSmallText>
       </CenterTitle>
 
