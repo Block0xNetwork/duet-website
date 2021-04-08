@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import logo from './assets/svg/logo.svg';
-// import mesh from './assets/images/mesh-png.png';
-import mesh from './assets/svg/mesh.svg';
+import mesh from './assets/images/mesh-png.png';
+// import mesh from './assets/svg/mesh.svg';
 import icon1 from './assets/svg/icon-1.svg';
 import icon2 from './assets/svg/icon-2.svg';
 import icon3 from './assets/svg/icon-3.svg';
@@ -11,6 +11,7 @@ import twitter from './assets/images/twitter.png';
 import medium from './assets/images/medium.png';
 import telegram from './assets/images/telegram.png';
 import weibo from './assets/images/weibo.png';
+import React, { useState } from 'react';
 
 
 const Body = styled.div`
@@ -123,7 +124,8 @@ const CenterTitle = styled.div`
   /* padding-top: 15%; */
   /* background-color: #1cb93e; */
   line-height: 126px;
-  margin-top: 200px;
+  margin-top: 15%;
+  /* margin-top: 200px; */
 `
 
 const CTBigText = styled.div`
@@ -337,7 +339,15 @@ const Media = styled.div`
 `
 
 const MediaIcon = styled.div`
-  margin-right: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  opacity: 0.6;
+
+  :hover {
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1.2);
+  }
 `
 
 const Copyright = styled.div`
@@ -356,6 +366,9 @@ const DivWidth = styled.div`
 
 
 function App() {
+
+  const [email, setEmail] = useState('');
+
   return (
     <Body>
       <DuetLogo><img src={logo} alt="logo" /></DuetLogo>
@@ -400,19 +413,22 @@ function App() {
       <KeyFeature>
         <KFTxtBorder>
           <TxtCircle>
-            <KFContent>Multichain deployment, including  BSC, Ethereum, NEO3.</KFContent>
+            <KFContent>Algo based hyper-collateralization model</KFContent>
             <SmallCircle />
           </TxtCircle>
 
           <TxtCircle>
-            <KFContent>Onboard traditional assets in censorship-resistance 
-              and trustless manner.</KFContent>
+            <KFContent>Any asset class</KFContent>
             <SmallCircle />
           </TxtCircle>
 
           <TxtCircle>
-            <KFContent>Create financial derivatives without friction, 
-              like mimic VIX index with no roll-over cost of futures.</KFContent>
+            <KFContent>Collateral earning multiplier</KFContent>
+            <SmallCircle />
+          </TxtCircle>
+
+          <TxtCircle>
+            <KFContent>DeFi coupling modules</KFContent>
             <SmallCircle />
           </TxtCircle>
         </KFTxtBorder>
@@ -422,21 +438,22 @@ function App() {
         <KFTxtBorder>
           <TxtCircle>
             <SmallCircle />
-            <KFContent2>Broader collateral acceptance including yield-bearing 
-              assets (yToken, cToken, LPToken etc.)</KFContent2>
+            <KFContent2>Music theme NFT</KFContent2>
           </TxtCircle>
 
           <TxtCircle>
             <SmallCircle />
-            <KFContent2>User‘s collateral will be sent to the corresponding 
-              governance/yield staking contract to earn interest.</KFContent2>
+            <KFContent2>Unique token releasing scheme</KFContent2>
           </TxtCircle>
 
           <TxtCircle>
             <SmallCircle />
-            <KFContent2>Algo based hyper-collateralization model to generate 
-              on-chain synthetic assets for any asset class, boost capital 
-              utilization while enhancing system robustness.</KFContent2>
+            <KFContent2>Broader collateral acceptance</KFContent2>
+          </TxtCircle>
+
+          <TxtCircle>
+            <SmallCircle />
+            <KFContent2>Governed by DAO</KFContent2>
           </TxtCircle>
         </KFTxtBorder>
       </KeyFeature>
@@ -530,21 +547,92 @@ function App() {
       </CenterTitle>
 
       <Submit>
-        <SubmitInput placeholder="Enter Your Email" />
-        <SubmitButton>Submit</SubmitButton>
+        <SubmitInput onChange={event => setEmail(event.target.value)} 
+          placeholder="Enter Your Email" />
+        <SubmitButton onClick={() => submit(email)}>Submit</SubmitButton>
       </Submit>
 
       <Media>
-        <MediaIcon><img src={fb} alt="fb" /></MediaIcon>
-        <MediaIcon><img src={twitter} alt="twitter" /></MediaIcon>
-        <MediaIcon><img src={medium} alt="medium" /></MediaIcon>
-        <MediaIcon><img src={telegram} alt="telegram" /></MediaIcon>
-        <MediaIcon><img src={weibo} alt="weibo" /></MediaIcon>
+        <MediaIcon><img width="32" src={fb} alt="fb" onClick={goFacebook} /></MediaIcon>
+        <MediaIcon><img width="32" src={twitter} alt="twitter" onClick={goTwitter} /></MediaIcon>
+        <MediaIcon><img width="32" src={medium} alt="medium" onClick={goMedium} /></MediaIcon>
+        <MediaIcon><img width="32" src={telegram} alt="telegram" onClick={goTelegram} /></MediaIcon>
+        <MediaIcon><img width="32" src={weibo} alt="weibo" onClick={goWeibo} /></MediaIcon>
       </Media>
 
-      <Copyright>@ 2021 Copyrights by Duet All Rights Reserved.</Copyright>
+      <Copyright>@2021 Copyrights by Duet All Rights Reserved.</Copyright>
     </Body>
   );
 }
+
+function submit(email: string) {
+  console.log('email = ' + email);
+  if (checkEmail(email)) {
+    // Save email.
+    console.log('Save email -> ' + email);
+    saveEmail(email);
+  }
+}
+
+function goFacebook() {
+  window.open('https://www.facebook.com/duetprotocol');
+}
+
+function goTwitter() {
+  window.open('https://twitter.com/duetprotocol');
+}
+
+function goMedium() {
+  window.open('https://duetprotocol.medium.com');
+}
+
+function goTelegram() {
+  window.open('https://t.me/duetprotocol');
+}
+
+function goWeibo() {
+  window.open('https://weibo.com/u/7582624963');
+}
+
+function checkEmail(email: string) {
+
+  var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+
+  // Call the regular verification test() function
+  const isok = reg.test(email);
+
+  if(!isok) {
+    alert("Please enter a valid email.");
+    // document.getElementById("emailname").focus();
+    return false;
+  } else {
+    return true;
+  }
+}
+
+//----------------------------------------------------------------
+// TEMP SOLUTION
+let baseUrl = 'http://62.234.169.68:8082';
+async function saveEmail(email: string) {
+  let batch = { email: email }
+  let response: Response
+  let url = baseUrl + '/dSubscribe'
+  try {
+    response = await fetch(url, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', accept: 'application/json' },
+      body: JSON.stringify(batch)
+    })
+
+    console.log('RETURN = ' + JSON.stringify(response))
+    alert('Thank You!')
+    return response
+  } catch (error) {
+    console.error(error)
+    return
+  }
+}
+//----------------------------------------------------------------
+
 
 export default App;
