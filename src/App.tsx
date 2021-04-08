@@ -173,9 +173,8 @@ const KFTxtBorder = styled.div`
 `
 
 const KFContent = styled.div`
-  color: #5574FF;
-  /* color: #5771FE; */
-  font-size: 16px;
+  color: #FFFFFF;
+  font-size: 18px;
   font-family: poppinsRegular;
   font-weight: bold;
   /* opacity: 0.59; */
@@ -185,7 +184,7 @@ const KFContent = styled.div`
 
 const KFContentSmall = styled.div`
   color: #FFFFFF;
-  font-size: 13px;
+  font-size: 14px;
   font-family: poppinsLight;
   opacity: 0.5;
   text-align: right;
@@ -194,9 +193,8 @@ const KFContentSmall = styled.div`
 `
 
 const KFContent2 = styled.div`
-  color: #5574FF;
-  /* color: #5771FE; */
-  font-size: 16px;
+  color: #FFFFFF;
+  font-size: 18px;
   font-family: poppinsRegular;
   font-weight: bold;
   /* opacity: 0.59; */
@@ -206,7 +204,7 @@ const KFContent2 = styled.div`
 
 const KFContentSmall2 = styled.div`
   color: #FFFFFF;
-  font-size: 13px;
+  font-size: 14px;
   font-family: poppinsLight;
   opacity: 0.5;
   text-align: left;
