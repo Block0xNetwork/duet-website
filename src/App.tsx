@@ -27,6 +27,7 @@ const DuetLogo = styled.div`
 
   @media (max-width: 950px) {
     padding-right: 0px;
+    transform: scale(0.85);
   }
   
 `
@@ -34,11 +35,9 @@ const DuetLogo = styled.div`
 const DuetIntro = styled.div`
   position: relative;
   height: 570px;
-  /* width: 100%; */
-  /* background-color: #1ac25a; */
 
   @media (max-width: 950px) {
-    height: 180px;
+    height: 300px;
   }
 `
 
@@ -49,13 +48,13 @@ const Mesh = styled.div`
 
   @media (max-width: 950px) {
     transform: scale(3);
+    padding-left: 10px;
   }
 `
 
 const Brand = styled.div`
   color: #FFFFFF;
   font-size: 50px;
-  /* font-size: 3.2rem; */
   font-family: samsung;
   position: absolute;
   padding-top: 11%;
@@ -64,6 +63,9 @@ const Brand = styled.div`
 
   @media (max-width: 950px) {
     font-size: 25px;
+    padding-top: 5%;
+    padding-left: 45px;
+    width: 80%;
   }
 `
 
@@ -80,6 +82,8 @@ const SubTitle = styled.div`
   @media (max-width: 950px) {
     font-size: 15px;
     padding-top: 25%;
+    padding-left: 45px;
+    width: 80%;
   }
 `
 
@@ -118,6 +122,7 @@ const IntroBox = styled.div`
 
   @media (max-width: 950px) {
     padding-top: 60px;
+    padding-bottom: 60px;
   }
 `
 
@@ -129,6 +134,10 @@ const BoxBorder = styled.div`
   width: 450px;
   height: 210px;
   padding-left: 20px;
+
+  @media (max-width: 950px) {
+    border-width: 0px;
+  }
 `
 
 const BoxContentTitle = styled.div`
@@ -162,7 +171,11 @@ const CenterTitle = styled.div`
   margin-top: 15%;
 
   @media (max-width: 950px) {
-    height: 170px;
+    margin-top: 70px;
+    margin-bottom: 170px;
+    height: 0px;
+    line-height: 30px;
+    /* background-color: #87da3a; */
   }
 `
 
@@ -202,7 +215,8 @@ const KeyFeature = styled.div`
 
 const KFimage = styled.div`
   @media (max-width: 950px) {
-    transform: scale(0.7);
+    /* transform: scale(0.7); */
+    display: none;
   }
 `
 
@@ -222,9 +236,13 @@ const KFContent = styled.div`
   font-size: 18px;
   font-family: poppinsRegular;
   font-weight: bold;
-  /* opacity: 0.59; */
   text-align: right;
   width: 335px;
+
+  @media (max-width: 950px) {
+    text-align: left;
+    width: 260px;
+  }
 `
 
 const KFContentSmall = styled.div`
@@ -235,6 +253,13 @@ const KFContentSmall = styled.div`
   text-align: right;
   width: 280px;
   margin-left: 55px;
+
+  @media (max-width: 950px) {
+    margin-left: 45px;
+    margin-top: 5px;
+    text-align: left;
+    width: 250px;
+  }
 `
 
 const KFContent2 = styled.div`
@@ -242,9 +267,13 @@ const KFContent2 = styled.div`
   font-size: 18px;
   font-family: poppinsRegular;
   font-weight: bold;
-  /* opacity: 0.59; */
   text-align: left;
   width: 280px;
+
+  @media (max-width: 950px) {
+    text-align: left;
+    width: 260px;
+  }
 `
 
 const KFContentSmall2 = styled.div`
@@ -255,6 +284,13 @@ const KFContentSmall2 = styled.div`
   text-align: left;
   width: 280px;
   margin-left: 50px;
+
+  @media (max-width: 950px) {
+    margin-left: 45px;
+    margin-top: 5px;
+    text-align: left;
+    width: 250px;
+  }
 `
 
 const RoadMap = styled.div`
@@ -366,8 +402,19 @@ const SmallCircle = styled.div`
   height: 8px;
   border-radius: 50%;
   background: linear-gradient(270deg, #AF0BD9 0%, #5574FF 100%);
+
+  @media (max-width: 950px) {
+    display: none;
+  }
 `
 
+const ForMobileSmallCircle = styled(SmallCircle)`
+  display: none;
+  @media (max-width: 950px) {
+    display: block;
+    margin-left: 15px;
+  }
+`
 const VerticalLine = styled.div`
   opacity: 0.6;
   background: linear-gradient(#AF0BD9, #5574FF);
@@ -418,8 +465,6 @@ const VL400 = styled.div`
   margin-left: 7px;
 
   @media (max-width: 950px) {
-    /* opacity: 0;
-    height: 0px; */
     display: none;
   }
 `
@@ -432,8 +477,6 @@ const VerticalLine2 = styled.div`
   margin-left: 7px;
 
   @media (max-width: 950px) {
-    /* opacity: 0;
-    height: 0px; */
     display: none;
   }
 `
@@ -447,6 +490,10 @@ const RoadMapTitle = styled.div`
   color: transparent;
   padding-bottom: 20px;
   text-align: left;
+
+  @media (max-width: 950px) {
+    padding-left: 25px;
+  }
 `
 
 const RoadMapContent = styled.div`
@@ -456,11 +503,21 @@ const RoadMapContent = styled.div`
   opacity: 0.59;
   text-align: left;
   width: 220px;
+
+  @media (max-width: 950px) {
+    width: 260px;
+    padding-left: 25px;
+  }
 `
 
 const Submit = styled.div`
   display: flex;
   justify-content: center;
+
+  @media (max-width: 950px) {
+    flex-flow: column;
+    align-items: center;
+  }
 `
 
 const SubmitInput = styled.input`
@@ -475,21 +532,27 @@ const SubmitInput = styled.input`
   text-indent: 20px;
 
   @media (max-width: 950px) {
-    width: 180px;
+    width: 70%;
   }
 `
 
 const SubmitButton = styled.button`
   width: 120px;
-  // height: 60px;
   margin-left: 20px;
-  // background: linear-gradient(to right, #5574FFFF, #AF0BD9FF);
   background: linear-gradient(270deg, #AF0BD9 0%, #5574FF 100%);
   border-radius: 4px;
   border: none;
   color: white;
   font-size: 18px;
   font-family: poppinsMedium;
+
+  @media (max-width: 950px) {
+    width: 71%;
+    margin-left: 0px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 `
 
 const Media = styled.div`
@@ -573,6 +636,7 @@ function App() {
       <KeyFeature>
         <KFTxtBorder>
           <TxtCircle>
+            <ForMobileSmallCircle />
             <KFContent>Algo based hyper-collateralization model</KFContent>
             <SmallCircle />
           </TxtCircle>
@@ -581,6 +645,7 @@ function App() {
             enhancing system robustness</KFContentSmall>
 
           <TxtCircle>
+            <ForMobileSmallCircle />
             <KFContent>Any asset class</KFContent>
             <SmallCircle />
           </TxtCircle>
@@ -588,6 +653,7 @@ function App() {
           <KFContentSmall>can be minted on-chain</KFContentSmall>
 
           <TxtCircle>
+            <ForMobileSmallCircle />
             <KFContent>Collateral earning multiplier</KFContent>
             <SmallCircle />
           </TxtCircle>
@@ -595,6 +661,7 @@ function App() {
           <KFContentSmall>reduce the opportunity cost of user migration</KFContentSmall>
 
           <TxtCircle>
+            <ForMobileSmallCircle />
             <KFContent>DeFi coupling modules</KFContent>
             <SmallCircle />
           </TxtCircle>
@@ -606,21 +673,21 @@ function App() {
 
         <KFTxtBorder>
           <TxtCircle>
-            <SmallCircle />
+            <SmallCircle /><ForMobileSmallCircle />
             <KFContent2>Music theme NFT</KFContent2>
           </TxtCircle>
 
           <KFContentSmall2>offering entertaining gamification schemes</KFContentSmall2>
 
           <TxtCircle>
-            <SmallCircle />
+            <SmallCircle /><ForMobileSmallCircle />
             <KFContent2>Unique token releasing scheme</KFContent2>
           </TxtCircle>
 
           <KFContentSmall2>to ensure project sustainability</KFContentSmall2>
           
           <TxtCircle>
-            <SmallCircle />
+            <SmallCircle /><ForMobileSmallCircle />
             <KFContent2>Broader collateral acceptance</KFContent2>
           </TxtCircle>
 
@@ -628,7 +695,7 @@ function App() {
             (yToken, cToken, LPToken, etc.)</KFContentSmall2>
           
           <TxtCircle>
-            <SmallCircle />
+            <SmallCircle /><ForMobileSmallCircle />
             <KFContent2>Governed by DAO</KFContent2>
           </TxtCircle>
 
