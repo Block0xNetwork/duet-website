@@ -24,6 +24,11 @@ const DuetLogo = styled.div`
   padding-top: 40px;
   padding-bottom: 120px;
   padding-right: 40px;
+
+  @media (max-width: 950px) {
+    padding-right: 0px;
+  }
+  
 `
 
 const DuetIntro = styled.div`
@@ -31,23 +36,35 @@ const DuetIntro = styled.div`
   height: 570px;
   /* width: 100%; */
   /* background-color: #1ac25a; */
+
+  @media (max-width: 950px) {
+    height: 180px;
+  }
 `
 
 const Mesh = styled.div`
   position: absolute;
   z-index: 1;
   width: 100%;
-  /* background-color: #451ed4; */
+
+  @media (max-width: 950px) {
+    transform: scale(3);
+  }
 `
 
 const Brand = styled.div`
   color: #FFFFFF;
   font-size: 50px;
+  /* font-size: 3.2rem; */
   font-family: samsung;
   position: absolute;
   padding-top: 11%;
   z-index: 2;
   width: 100%;
+
+  @media (max-width: 950px) {
+    font-size: 25px;
+  }
 `
 
 const SubTitle = styled.div`
@@ -59,11 +76,17 @@ const SubTitle = styled.div`
   padding-top: 15.3%;
   width: 100%;
   z-index: 2;
+
+  @media (max-width: 950px) {
+    font-size: 15px;
+    padding-top: 25%;
+  }
 `
 
 const IconList = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 `
 
 const Icon = styled.div`
@@ -73,6 +96,11 @@ const Icon = styled.div`
 const Icon2 = styled.div`
   padding-left: 210px;
   padding-right: 210px;
+
+  @media (max-width: 950px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 `
 
 const IconTitle = styled.div`
@@ -85,7 +113,12 @@ const IconTitle = styled.div`
 const IntroBox = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   padding-top: 100px;
+
+  @media (max-width: 950px) {
+    padding-top: 60px;
+  }
 `
 
 const BoxBorder = styled.div`
@@ -125,11 +158,12 @@ const BoxContent = styled.div`
 const CenterTitle = styled.div`
   position: relative;
   height: 250px;
-  /* padding-top: 15%; */
-  /* background-color: #1cb93e; */
   line-height: 126px;
   margin-top: 15%;
-  /* margin-top: 200px; */
+
+  @media (max-width: 950px) {
+    height: 170px;
+  }
 `
 
 const CTBigText = styled.div`
@@ -141,6 +175,10 @@ const CTBigText = styled.div`
   z-index: 1;
   width: 100%;
   /* background-color: #243a10; */
+
+  @media (max-width: 950px) {
+    font-size: 50px;
+  }
 `
 
 const CTSmallText = styled.div`
@@ -148,17 +186,24 @@ const CTSmallText = styled.div`
   font-size: 50px;
   font-family: samsung;
   position: absolute;
-  /* padding-top: 2.8%; */
   z-index: 2;
   width: 100%;
+
+  @media (max-width: 950px) {
+    font-size: 30px;
+  }
 `
 
 const KeyFeature = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 `
 
 const KFimage = styled.div`
+  @media (max-width: 950px) {
+    transform: scale(0.7);
+  }
 `
 
 const TxtCircle = styled.div`
@@ -215,34 +260,77 @@ const KFContentSmall2 = styled.div`
 const RoadMap = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 950px) {
+    flex-flow: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
 `
 
 const RMDiv1 = styled.div`
   padding-left: 20px;
   padding-top: 210px;
+
+  @media (max-width: 950px) {
+    padding-left: 0px;
+    padding-top: 0px;
+  }
 `
 
 const RMDiv2 = styled.div`
   padding-left: 20px;
+
+  @media (max-width: 950px) {
+    padding-left: 0px;
+    padding-top: 30px;
+  }
 `
 
 const RMDiv3 = styled.div`
   padding-left: 20px;
   padding-top: 70px;
+
+  @media (max-width: 950px) {
+    padding-left: 0px;
+    padding-top: 30px;
+  }
 `
 
 const RMDiv4 = styled.div`
   padding-left: 20px;
   padding-top: 10px;
+
+  @media (max-width: 950px) {
+    padding-left: 0px;
+    padding-top: 30px;
+  }
 `
 
 const RMDiv5 = styled.div`
   padding-left: 20px;
+
+  @media (max-width: 950px) {
+    padding-left: 0px;
+  }
 `
 
 const RMDiv6 = styled.div`
   padding-left: 20px;
   padding-top: 190px;
+
+  @media (max-width: 950px) {
+    display: none;
+  }
+`
+
+const ForMobile = styled.div`
+  display: none;
+  @media (max-width: 950px) {
+    display: block;
+    padding-top: 50px;
+  }
 `
 
 const Line = styled.div`
@@ -250,6 +338,11 @@ const Line = styled.div`
   background: linear-gradient(to right, black, #9A24E2, #675FF7, black);
   // background: linear-gradient(to right, #AF0BD9, #9A24E2, #675FF7, #5574FF);
   height: 1px;
+
+  @media (max-width: 950px) {
+    /* opacity: 0; */
+    display: none;
+  }
 `
 
 const Circle = styled.div`
@@ -258,6 +351,11 @@ const Circle = styled.div`
   height: 15px;
   background-color: #8C0AB2;
   border-radius: 50%;
+
+  @media (max-width: 950px) {
+    /* opacity: 0; */
+    display: none;
+  }
 `
 
 const SmallCircle = styled.div`
@@ -276,6 +374,12 @@ const VerticalLine = styled.div`
   height: 200px;
   width: 1px;
   margin-left: 7px;
+
+  @media (max-width: 950px) {
+    /* opacity: 0;
+    height: 0px; */
+    display: none;
+  }
 `
 
 const VL410 = styled.div`
@@ -284,6 +388,12 @@ const VL410 = styled.div`
   height: 410px;
   width: 1px;
   margin-left: 7px;
+
+  @media (max-width: 950px) {
+    /* opacity: 0;
+    height: 0px; */
+    display: none;
+  }
 `
 
 const VL340 = styled.div`
@@ -292,6 +402,12 @@ const VL340 = styled.div`
   height: 340px;
   width: 1px;
   margin-left: 7px;
+
+  @media (max-width: 950px) {
+    /* opacity: 0;
+    height: 0px; */
+    display: none;
+  }
 `
 
 const VL400 = styled.div`
@@ -300,6 +416,12 @@ const VL400 = styled.div`
   height: 400px;
   width: 1px;
   margin-left: 7px;
+
+  @media (max-width: 950px) {
+    /* opacity: 0;
+    height: 0px; */
+    display: none;
+  }
 `
 
 const VerticalLine2 = styled.div`
@@ -308,6 +430,12 @@ const VerticalLine2 = styled.div`
   height: 200px;
   width: 1px;
   margin-left: 7px;
+
+  @media (max-width: 950px) {
+    /* opacity: 0;
+    height: 0px; */
+    display: none;
+  }
 `
 
 const RoadMapTitle = styled.div`
@@ -345,6 +473,10 @@ const SubmitInput = styled.input`
   border-radius: 4px;
   border: none;
   text-indent: 20px;
+
+  @media (max-width: 950px) {
+    width: 180px;
+  }
 `
 
 const SubmitButton = styled.button`
@@ -384,7 +516,7 @@ const Copyright = styled.div`
   font-family: PingFangSC-Regular;
   opacity: 0.29;
   margin-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 `
 
 const DivWidth = styled.div`
@@ -520,6 +652,12 @@ function App() {
           <RoadMapContent>Prelude-mining launch and get the code audited</RoadMapContent>
         </RMDiv1>
 
+        <ForMobile>
+          <RoadMapTitle>Q2 2021</RoadMapTitle>
+          <RoadMapContent>Launch Ethereum and BSC airdrop and asset 
+            minting module</RoadMapContent>
+        </ForMobile>
+
         <RMDiv2>
           <Circle></Circle>
           <VL410></VL410>
@@ -529,6 +667,13 @@ function App() {
           <RoadMapContent>Launch on NEO. Expanding synthetic asset list to 50+, 
             launch reverse assets, VIX tracker, inflation hedger, etc. </RoadMapContent>
         </RMDiv2>
+
+        <ForMobile>
+          <RoadMapTitle>Q4 2021</RoadMapTitle>
+          <RoadMapContent>Launch DUET’s own swap and lending modules; 
+            dock dAssets with major global lending and trading protocol; 
+            expand the issuance to more permissionless chains.</RoadMapContent>
+        </ForMobile>
 
         <RMDiv3>
           <Circle></Circle>
@@ -540,6 +685,12 @@ function App() {
             on ZK solution;community-based asset management platform based 
             on d asset development</RoadMapContent>
         </RMDiv3>
+
+        <ForMobile>
+          <RoadMapTitle>Q2 2022</RoadMapTitle>
+          <RoadMapContent>Covering more than 500 core assets achieving 
+            the goal of ‘global coverage in-one-wallet’</RoadMapContent>
+        </ForMobile>
 
         <RMDiv4>
           <Circle></Circle>
@@ -595,7 +746,7 @@ function App() {
 
       <Submit>
         <SubmitInput onChange={event => setEmail(event.target.value)} 
-          placeholder="Enter Your Email" />
+          placeholder="Enter Your Email" type="text" />
         <SubmitButton onClick={() => submit(email)}>Submit</SubmitButton>
       </Submit>
 
