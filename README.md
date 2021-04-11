@@ -1,6 +1,6 @@
 # Duet Protocol Web App
 
-A Multi-chain Synthetic Asset Protocol.
+## A Multi-chain Synthetic Asset Protocol.
 
 Duet enables on/off-ramp between traditional real assets and high-growth crypto assets.
 

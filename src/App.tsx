@@ -18,6 +18,7 @@ const Body = styled.div`
   align-items: center;
   text-align: center;
   background-color: #0D011F;
+  /* width: 100%; */
 `
 
 const DuetLogo = styled.div`
@@ -27,6 +28,7 @@ const DuetLogo = styled.div`
 
   @media (max-width: 950px) {
     padding-right: 0px;
+    padding-bottom: 30px;
     transform: scale(0.85);
   }
   
@@ -37,7 +39,9 @@ const DuetIntro = styled.div`
   height: 570px;
 
   @media (max-width: 950px) {
-    height: 300px;
+    height: 510px;
+    overflow: hidden;
+    /* background-color: #87da3a; */
   }
 `
 
@@ -49,6 +53,7 @@ const Mesh = styled.div`
   @media (max-width: 950px) {
     transform: scale(3);
     padding-left: 10px;
+    padding-top: 80px;
   }
 `
 
@@ -63,7 +68,7 @@ const Brand = styled.div`
 
   @media (max-width: 950px) {
     font-size: 25px;
-    padding-top: 5%;
+    padding-top: 42%;
     padding-left: 45px;
     width: 80%;
   }
@@ -81,7 +86,7 @@ const SubTitle = styled.div`
 
   @media (max-width: 950px) {
     font-size: 15px;
-    padding-top: 25%;
+    padding-top: 61%;
     padding-left: 45px;
     width: 80%;
   }
@@ -89,8 +94,12 @@ const SubTitle = styled.div`
 
 const IconList = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+
+  @media (max-width: 950px) {
+    flex-flow: column;
+  }
 `
 
 const Icon = styled.div`
@@ -98,9 +107,6 @@ const Icon = styled.div`
 `
 
 const Icon2 = styled.div`
-  padding-left: 210px;
-  padding-right: 210px;
-
   @media (max-width: 950px) {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -123,6 +129,7 @@ const IntroBox = styled.div`
   @media (max-width: 950px) {
     padding-top: 60px;
     padding-bottom: 60px;
+    margin-left: -5px;
   }
 `
 
@@ -546,8 +553,13 @@ const SubmitButton = styled.button`
   font-size: 18px;
   font-family: poppinsMedium;
 
+  :hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
   @media (max-width: 950px) {
-    width: 71%;
+    width: 74%;
     margin-left: 0px;
     margin-top: 20px;
     padding-top: 10px;
