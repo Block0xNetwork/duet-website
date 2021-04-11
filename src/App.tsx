@@ -118,6 +118,10 @@ const IconTitle = styled.div`
   font-size: 28px;
   font-family: poppinsRegular;
   padding-top: 20px;
+
+  @media (max-width: 950px) {
+    font-size: 24px;
+  }
 `
 
 const IntroBox = styled.div`
@@ -592,6 +596,10 @@ const Copyright = styled.div`
   opacity: 0.29;
   margin-top: 20px;
   padding-bottom: 40px;
+
+  @media (max-width: 950px) {
+    padding-bottom: 60px;
+  }
 `
 
 const DivWidth = styled.div`
