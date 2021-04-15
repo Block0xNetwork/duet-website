@@ -1,10 +1,25 @@
 import styled from 'styled-components'
 import logo from './assets/svg/logo.svg';
+import brand from './assets/svg/brand.svg';
 import mesh from './assets/images/mesh-png.png';
-// import mesh from './assets/svg/mesh.svg';
 import icon1 from './assets/svg/icon-1.svg';
 import icon2 from './assets/svg/icon-2.svg';
 import icon3 from './assets/svg/icon-3.svg';
+
+import omni from './assets/images/omni.png';
+import bitcoin from './assets/images/bitcoin.png';
+import dao from './assets/images/dao.png';
+import matrix from './assets/images/matrix.png';
+import ibm from './assets/images/ibm.png';
+import binance from './assets/images/binance.png';
+import microsoft from './assets/images/microsoft.png';
+import ifinance from './assets/images/ifinance.png';
+
+import news1 from './assets/images/news1.png';
+import news2 from './assets/images/news2.png';
+import news3 from './assets/images/news3.png';
+import news4 from './assets/images/news4.png';
+
 import keyfeature from './assets/images/keyfeature.png';
 import fb from './assets/images/fb.png';
 import twitter from './assets/images/twitter.png';
@@ -14,24 +29,27 @@ import weibo from './assets/images/weibo.png';
 import React, { useState } from 'react';
 
 
+const BG = styled.div`
+  display: flex;
+  justify-content: center;
+  background-color: #0E1124;
+  `
+
 const Body = styled.div`
-  align-items: center;
   text-align: center;
-  background-color: #0D011F;
-  /* width: 100%; */
+  background-color: #616857;
+  width: 1280px;
 `
 
 const DuetLogo = styled.div`
-  padding-top: 40px;
-  padding-bottom: 120px;
-  padding-right: 40px;
+  margin-top: 24px;
+  text-align: left;
 
   @media (max-width: 950px) {
     padding-right: 0px;
     padding-bottom: 30px;
     transform: scale(0.85);
   }
-  
 `
 
 const DuetIntro = styled.div`
@@ -58,9 +76,9 @@ const Mesh = styled.div`
 `
 
 const Brand = styled.div`
-  color: #FFFFFF;
+  /* color: #FFFFFF;
   font-size: 50px;
-  font-family: samsung;
+  font-family: samsung; */
   position: absolute;
   padding-top: 11%;
   z-index: 2;
@@ -77,12 +95,14 @@ const Brand = styled.div`
 const SubTitle = styled.div`
   color: #FFFFFF;
   opacity: 0.59;
-  font-size: 20px;
-  font-family: poppinsLight;
+  font-size: 32px;
+  font-family: tekoLight;
+  font-weight: 300;
   position: absolute;
-  padding-top: 15.3%;
+  padding-top: 20%;
   width: 100%;
   z-index: 2;
+  /* background: white; */
 
   @media (max-width: 950px) {
     font-size: 15px;
@@ -92,9 +112,50 @@ const SubTitle = styled.div`
   }
 `
 
-const IconList = styled.div`
+const WPDiv = styled.div`
+  /* background: white; */
+  position: absolute;
+  margin-top: 25%;
+  width: 100%;
+  z-index: 2;
+
+  @media (max-width: 950px) {
+    width: 74%;
+    margin-left: 0px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+`
+
+const WhitePaper = styled.button`
+  width: 240px;
+  height: 60px;
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  /* border-radius: 4px; */
+  color: white;
+  font-size: 18px;
+  font-family: poppinsMedium;
+
+  :hover {
+    cursor: pointer;
+    transform: scale(1.01);
+  }
+
+  @media (max-width: 950px) {
+    width: 74%;
+    margin-left: 0px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+`
+
+const FlexLayout = styled.div<{ justify?: any }>`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: ${({ justify }) => (justify ? justify : 'flex-start')};
+  // justify-content: space-evenly;
   flex-wrap: wrap;
 
   @media (max-width: 950px) {
@@ -103,7 +164,10 @@ const IconList = styled.div`
 `
 
 const Icon = styled.div`
+  /* background-color: white; */
   /* padding-left: 250px; */
+  /* width: 320px;
+  height: 166px; */
 `
 
 const Icon2 = styled.div`
@@ -138,56 +202,117 @@ const IntroBox = styled.div`
 `
 
 const BoxBorder = styled.div`
-  border-width: 1px;
+  /* border-width: 1px;
   border-radius: 2px;
   border-style: solid;
   border-color: #191b19;
   width: 450px;
   height: 210px;
-  padding-left: 20px;
+  padding-left: 20px; */
+  margin-bottom: 200px;
 
   @media (max-width: 950px) {
     border-width: 0px;
   }
 `
 
-const BoxContentTitle = styled.div`
-  font-size: 24px;
+const ContentTitle = styled.div`
+  font-size: 40px;
+  font-weight: 600;
   font-family: poppinsMedium;
   background: linear-gradient(to right, #5574FF, #AF0BD9);
   -webkit-background-clip: text;
   color: transparent;
-  padding-top: 40px;
-  padding-left: 40px;
-  padding-right: 40px;
+
+  /* background: green; */
+  /* color: #FFFFFF; */
+
+  width: 273px;
+  height: 116px;
   text-align: left;
+`
+
+const ContentTitleForRU = styled.div`
+  font-size: 40px;
+  font-weight: 600;
+  font-family: poppinsMedium;
+  background: linear-gradient(to right, #5574FF, #AF0BD9);
+  -webkit-background-clip: text;
+  color: transparent;
+
+  /* background: green; */
+  /* color: #FFFFFF; */
+  width: 1280px;
+  height: 116px;
+  text-align: center;
+`
+
+const WhatIsDuet = styled.div`
+  font-size: 24px;
+  font-weight: 400;
+  font-family: poppinsRegular;
+  /* background: green; */
+  width: 640px;
+  height: 336px;
+  text-align: left;
+  color: #FFFFFF;
+  margin-left: 367px;
+  margin-bottom: 200px;
+`
+
+const BoxTitle = styled.div`
+  /* background: green; */
+  text-align: left;
+  width: 500px;
+  height: 45px;
+  font-size: 32px;
+  font-family: poppinsMedium;
+  font-weight: 500;
+  color: #FFFFFF;
+  /* line-height: 48px; */
 `
 
 const BoxContent = styled.div`
+  width: 500px;
+  height: 48px;
+  font-size: 16px;
+  font-family: poppinsMedium;
+  font-weight: 500;
   color: #FFFFFF;
-  font-size: 18px;
-  font-family: poppinsLight;
-  opacity: 0.59;
-  padding-top: 20px;
+  opacity: 0.4;
+  text-align: left;
+  /* background: green; */
+
+  /* padding-top: 20px;
   padding-left: 40px;
   padding-right: 40px;
   padding-bottom: 40px;
-  text-align: left;
+  text-align: left; */
 `
 
-const CenterTitle = styled.div`
-  position: relative;
-  height: 250px;
-  line-height: 126px;
-  margin-top: 15%;
+const News = styled.div`
+  /* background: green; */
+  text-align: left;
+  width: 300px;
+  height: 72px;
+  font-size: 16px;
+  font-family: poppinsMedium;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`
 
-  @media (max-width: 950px) {
-    margin-top: 70px;
-    margin-bottom: 170px;
-    height: 0px;
-    line-height: 30px;
-    /* background-color: #87da3a; */
-  }
+const NewsDate = styled.div`
+  /* background: green; */
+  text-align: left;
+  opacity: 0.59;
+  width: 300px;
+  height: 17px;
+  font-size: 12px;
+  font-family: poppinsRegular;
+  font-weight: 400;
+  color: #FFFFFF;
 `
 
 const CTBigText = styled.div`
@@ -222,6 +347,7 @@ const KeyFeature = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 200px;
 `
 
 const KFimage = styled.div`
@@ -532,14 +658,17 @@ const Submit = styled.div`
 `
 
 const SubmitInput = styled.input`
-  background-color: #130B1F;
-  width: 440px;
-  height: 50px;
+  background-color: #0E1124;
+  width: 640px;
+  height: 60px;
   outline-style: none;
-  color: white;
-  font-size: 18px;
-  border-radius: 4px;
-  border: none;
+  font-size: 16px;
+  font-family: poppinsRegular;
+  font-weight: 400;
+  color: #FFFFFF;
+  /* line-height: 25px; */
+  /* border-radius: 4px; */
+  border: 1px solid #FFFFFF;
   text-indent: 20px;
 
   @media (max-width: 950px) {
@@ -548,18 +677,22 @@ const SubmitInput = styled.input`
 `
 
 const SubmitButton = styled.button`
-  width: 120px;
-  margin-left: 20px;
-  background: linear-gradient(270deg, #AF0BD9 0%, #5574FF 100%);
-  border-radius: 4px;
+  width: 180px;
+  height: 64px;
+  background-color: #FFFFFF;
+  /* margin-left: 20px; */
+  /* background: linear-gradient(270deg, #AF0BD9 0%, #5574FF 100%); */
+  /* border-radius: 4px; */
   border: none;
-  color: white;
+  /* border: 1px solid #FFFFFF; */
   font-size: 18px;
   font-family: poppinsMedium;
+  font-weight: 500;
+  color: #0E1124;
 
   :hover {
     cursor: pointer;
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
   }
 
   @media (max-width: 950px) {
@@ -574,7 +707,8 @@ const SubmitButton = styled.button`
 const Media = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 160px;
+  margin-bottom: 40px;
 `
 
 const MediaIcon = styled.div`
@@ -594,17 +728,18 @@ const Copyright = styled.div`
   font-size: 14px;
   font-family: PingFangSC-Regular;
   opacity: 0.29;
-  margin-top: 20px;
-  padding-bottom: 40px;
+  font-weight: 400;
+  margin-top: 165px;
+  margin-bottom: 40px;
 
   @media (max-width: 950px) {
     padding-bottom: 60px;
   }
 `
 
-const DivWidth = styled.div`
-  padding-left: 30px;
-  padding-right: 30px;
+const Space = styled.div<{ width?: number, height?: number }>`
+  width: ${({ width }) => (width ? width + 'px' : '0px')};
+  height: ${({ height }) => (height ? height + 'px' : '0px')};
 `
 
 
@@ -613,45 +748,56 @@ function App() {
   const [email, setEmail] = useState('');
 
   return (
-    <Body>
-      <DuetLogo><img src={logo} alt="logo" /></DuetLogo>
+    <BG><Body>
+      <DuetLogo><img width="176px" height="32px" src={logo} alt="logo" /></DuetLogo>
 
       <DuetIntro>
         <Mesh><img width="90%" src={mesh} alt="mesh" /></Mesh>
-        <Brand>A Multi-chain Synthetic Asset Protocol</Brand>
-        <SubTitle>Duet enables on/off-ramp between traditional real assets 
-        and high-growth crypto assets</SubTitle>
+        <Brand><img width="612px" height="80px" src={brand} alt="brand" /></Brand>
+        {/* <Brand>A Multi-chain Synthetic Asset Protocol</Brand> */}
+        <SubTitle>A Parallel Universe Which Turns Flat Assets Into Sharp Assets</SubTitle>
+        <WPDiv><WhitePaper onClick={() => submit(email)}>White Paper</WhitePaper></WPDiv>
       </DuetIntro>
 
-      <CenterTitle>
-        <CTBigText>Overview</CTBigText>
-        <CTSmallText>Overview</CTSmallText>
-      </CenterTitle>
+      <FlexLayout>
+        <ContentTitle>What is Duet Protocol</ContentTitle>
+        <WhatIsDuet>Duet protocol (Duet) is a Multi-chain synthetic asset protocol 
+          that sharpens all assets for use in the blockchain world. A duet in music 
+          refers to a piece of music where two people play different parts or melodies. 
+          Similarly, Duet protocol allows traders to replicate the real-world tradable 
+          assets in a decentralised finance ecosystem. </WhatIsDuet>
+      </FlexLayout>
 
-      <IconList>
+      <FlexLayout>
+        <ContentTitle>How It Works</ContentTitle>
+        <KFimage><img src={keyfeature} alt="keyfeature" /></KFimage>
+      </FlexLayout>
+      <Space height={200} />
+
+      <ContentTitle>Overview</ContentTitle>
+      <Space height={60} />
+      <FlexLayout justify='space-around'>
         <Icon><img src={icon1} alt="icon1" /><IconTitle>Reliability</IconTitle></Icon>
         <Icon2><img src={icon2} alt="icon2" /><IconTitle>Availability</IconTitle></Icon2>
         <Icon><img src={icon3} alt="icon3" /><IconTitle>Scalability</IconTitle></Icon>
-      </IconList>
-
-      <IntroBox>
+      </FlexLayout>
+      
+      <Space height={80} />
+      <FlexLayout>
         <BoxBorder>
-          <BoxContentTitle>Seamless Integration</BoxContentTitle>
+          <BoxTitle>Seamless Integration</BoxTitle>
           <BoxContent>from BTC to Tesla, Moutai, and VIX, allocate capital to 
             ANY asset with only one crypto wallet</BoxContent>
         </BoxBorder>
-        <DivWidth />
+        <Space width={140} />
         <BoxBorder>
-          <BoxContentTitle>Hybrid-collateralization Model</BoxContentTitle>
+          <BoxTitle>Hybrid-collateralization Model</BoxTitle>
           <BoxContent>algo based hyper-collateralization model to generate 
             on-chain synthetic assets</BoxContent>
         </BoxBorder>
-      </IntroBox>
+      </FlexLayout>
 
-      <CenterTitle>
-        <CTBigText>Key Features</CTBigText>
-        <CTSmallText>Key Features</CTSmallText>
-      </CenterTitle>
+      <ContentTitle>Key Features</ContentTitle>
 
       <KeyFeature>
         <KFTxtBorder>
@@ -724,11 +870,8 @@ function App() {
         </KFTxtBorder>
       </KeyFeature>
 
-      <CenterTitle>
-        <CTBigText>Road Map</CTBigText>
-        <CTSmallText>Road Map</CTSmallText>
-      </CenterTitle>
-
+      <ContentTitle>Road Map</ContentTitle>
+      <Space height={60} />
       <RoadMap>
         <RMDiv1>
           <Circle></Circle>
@@ -826,10 +969,54 @@ function App() {
         </RMDiv6>
       </RoadMap>
 
-      <CenterTitle>
-        <CTBigText>Receive updates</CTBigText>
-        <CTSmallText>Receive updates</CTSmallText>
-      </CenterTitle>
+      <Space height={200} />
+      <ContentTitle>Partner</ContentTitle>
+
+      <FlexLayout>
+        <img width="320px" height="166px" src={omni} />
+        <img width="320px" height="166px" src={bitcoin} />
+        <img width="320px" height="166px" src={dao} />
+        <img width="320px" height="166px" src={matrix} />
+        <img width="320px" height="166px" src={ibm} />
+        <img width="320px" height="166px" src={binance} />
+        <img width="320px" height="166px" src={microsoft} />
+        <img width="320px" height="166px" src={ifinance} />
+      </FlexLayout>
+
+      <Space height={160} />
+      <ContentTitle>News</ContentTitle>
+
+      <FlexLayout>
+        <BoxBorder>
+          <img width="300px" height="180px" src={news1} />
+          <News>Duet protocol is a synthetic asset protocol that 
+            allows traditional assets to migrate to high-growth </News>
+          <NewsDate>April 13</NewsDate>
+        </BoxBorder>
+        <Space width={26} />
+        <BoxBorder>
+          <img width="300px" height="180px" src={news2} />
+          <News>Duet protocol is a synthetic asset protocol that 
+            allows traditional assets to migrate to high-growth </News>
+          <NewsDate>April 13</NewsDate>
+        </BoxBorder>
+        <Space width={26} />
+        <BoxBorder>
+          <img width="300px" height="180px" src={news3} />
+          <News>Duet protocol is a synthetic asset protocol that 
+            allows traditional assets to migrate to high-growth </News>
+          <NewsDate>April 13</NewsDate>
+        </BoxBorder>
+        <Space width={26} />
+        <BoxBorder>
+          <img width="300px" height="180px" src={news4} />
+          <News>Duet protocol is a synthetic asset protocol that 
+            allows traditional assets to migrate to high-growth </News>
+          <NewsDate>April 13</NewsDate>
+        </BoxBorder>
+      </FlexLayout>
+
+      <ContentTitleForRU>Receive updates</ContentTitleForRU>
 
       <Submit>
         <SubmitInput onChange={event => setEmail(event.target.value)} 
@@ -837,16 +1024,18 @@ function App() {
         <SubmitButton onClick={() => submit(email)}>Submit</SubmitButton>
       </Submit>
 
-      <Media>
-        <MediaIcon><img width="32" src={fb} alt="fb" onClick={goFacebook} /></MediaIcon>
-        <MediaIcon><img width="32" src={twitter} alt="twitter" onClick={goTwitter} /></MediaIcon>
-        <MediaIcon><img width="32" src={medium} alt="medium" onClick={goMedium} /></MediaIcon>
-        <MediaIcon><img width="32" src={telegram} alt="telegram" onClick={goTelegram} /></MediaIcon>
-        <MediaIcon><img width="32" src={weibo} alt="weibo" onClick={goWeibo} /></MediaIcon>
-      </Media>
+      <FlexLayout justify="space-between">
+        <Media>
+          <MediaIcon><img width="32" src={fb} alt="fb" onClick={goFacebook} /></MediaIcon>
+          <MediaIcon><img width="32" src={twitter} alt="twitter" onClick={goTwitter} /></MediaIcon>
+          <MediaIcon><img width="32" src={medium} alt="medium" onClick={goMedium} /></MediaIcon>
+          <MediaIcon><img width="32" src={telegram} alt="telegram" onClick={goTelegram} /></MediaIcon>
+          <MediaIcon><img width="32" src={weibo} alt="weibo" onClick={goWeibo} /></MediaIcon>
+        </Media>
 
-      <Copyright>@2021 Copyrights by Duet All Rights Reserved.</Copyright>
-    </Body>
+        <Copyright>@2021 Copyrights by Duet All Rights Reserved.</Copyright>
+      </FlexLayout>
+    </Body></BG>
   );
 }
 

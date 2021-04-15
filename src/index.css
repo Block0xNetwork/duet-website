@@ -31,3 +31,8 @@ code {
   font-family: 'poppinsRegular';
   src: url('./assets/fonts/Poppins-Regular.ttf');
 }
+
+@font-face {
+  font-family: 'tekoLight';
+  src: url('./assets/fonts/Teko-Light.ttf');
+}
