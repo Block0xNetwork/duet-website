@@ -1,4 +1,4 @@
-# Duet Protocol Web App
+# Duet Protocol Website
 
 ## A Multi-chain Synthetic Asset Protocol.
 

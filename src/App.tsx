@@ -28,6 +28,7 @@ import telegram from './assets/images/telegram.png';
 import weibo from './assets/images/weibo.png';
 import React, { useState } from 'react';
 
+import Wave from './Wave/Wave';
 
 const BG = styled.div`
   display: flex;
@@ -37,13 +38,19 @@ const BG = styled.div`
 
 const Body = styled.div`
   text-align: center;
-  background-color: #616857;
+  /* background-color: #616857; */
   width: 1280px;
 `
 
 const DuetLogo = styled.div`
   margin-top: 24px;
   text-align: left;
+  /* background-color: #3a42b1; */
+  line-height: 10px;
+
+  :hover {
+    cursor: pointer;
+  }
 
   @media (max-width: 950px) {
     padding-right: 0px;
@@ -52,9 +59,94 @@ const DuetLogo = styled.div`
   }
 `
 
+const MenuList = styled.div`
+  display: flex;
+  /* background-color: #3a42b1; */
+  margin-top: 30px;
+  /* height: 100px; */
+  @media (max-width: 950px) {
+    padding-right: 0px;
+    padding-bottom: 30px;
+    transform: scale(0.85);
+  }
+`
+
+const Menu = styled.div<{ left?: number }>`
+  /* margin-left: 40px; */
+  margin-left: ${({ left }) => (left ? left + 'px' : '40px')};
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+  /* background-color: #4ac212; */
+  font-size: 14px;
+  font-family: poppinsMedium;
+  font-weight: 600;
+  color: #FFFFFF;
+  cursor: pointer;
+
+  /* :hover {
+    transform: scale(1.05);
+  } */
+
+  @media (max-width: 950px) {
+    padding-right: 0px;
+    padding-bottom: 30px;
+    transform: scale(0.85);
+  }
+`
+
+const WebApp = styled.div`
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  /* z-index: 1; */
+  display: inline-block;
+  /* justify-content: flex-end; */
+  /* background-color: #c70d0d; */
+
+  @media (max-width: 950px) {
+  }
+`
+
+const AppList = styled.div`
+  /* display: flex; */
+  /* justify-content: flex-end; */
+  /* background-color: #d3d013; */
+  /* padding-top: 30px; */
+  position: absolute;
+  z-index: 2;
+  display: none;
+
+  ${WebApp}:hover & {
+    display: block;
+  }
+
+  @media (max-width: 950px) {
+  }
+`
+
+const AppItem = styled.div`
+  /* margin-left: 40px; */
+  width: 70px;
+  line-height: 30px;
+  /* background-color: #4ac212; */
+  font-size: 14px;
+  font-family: poppinsMedium;
+  font-weight: 600;
+  color: #FFFFFF;
+  cursor: pointer;
+
+  /* :hover {
+    transform: scale(1.05);
+  } */
+
+  @media (max-width: 950px) {
+  }
+`
+
 const DuetIntro = styled.div`
   position: relative;
-  height: 570px;
+  height: 550px;
 
   @media (max-width: 950px) {
     height: 510px;
@@ -63,27 +155,27 @@ const DuetIntro = styled.div`
   }
 `
 
-const Mesh = styled.div`
-  position: absolute;
-  z-index: 1;
-  width: 100%;
+// const Mesh = styled.div`
+//   position: absolute;
+//   z-index: 1;
+//   width: 100%;
 
-  @media (max-width: 950px) {
-    transform: scale(3);
-    padding-left: 10px;
-    padding-top: 80px;
-  }
-`
+//   @media (max-width: 950px) {
+//     transform: scale(3);
+//     padding-left: 10px;
+//     padding-top: 80px;
+//   }
+// `
 
 const Brand = styled.div`
   /* color: #FFFFFF;
   font-size: 50px;
   font-family: samsung; */
   position: absolute;
-  padding-top: 11%;
+  margin-top: 11%;
   z-index: 2;
   width: 100%;
-
+  /* background: #168d48; */
   @media (max-width: 950px) {
     font-size: 25px;
     padding-top: 42%;
@@ -99,10 +191,10 @@ const SubTitle = styled.div`
   font-family: tekoLight;
   font-weight: 300;
   position: absolute;
-  padding-top: 20%;
+  margin-top: 20%;
   width: 100%;
   z-index: 2;
-  /* background: white; */
+  /* background: #9c3232; */
 
   @media (max-width: 950px) {
     font-size: 15px;
@@ -113,7 +205,7 @@ const SubTitle = styled.div`
 `
 
 const WPDiv = styled.div`
-  /* background: white; */
+  /* background: #4b0909; */
   position: absolute;
   margin-top: 25%;
   width: 100%;
@@ -155,7 +247,6 @@ const WhitePaper = styled.button`
 const FlexLayout = styled.div<{ justify?: any }>`
   display: flex;
   justify-content: ${({ justify }) => (justify ? justify : 'flex-start')};
-  // justify-content: space-evenly;
   flex-wrap: wrap;
 
   @media (max-width: 950px) {
@@ -163,14 +254,14 @@ const FlexLayout = styled.div<{ justify?: any }>`
   }
 `
 
-const Icon = styled.div`
-  /* background-color: white; */
-  /* padding-left: 250px; */
-  /* width: 320px;
-  height: 166px; */
-`
+// const Icon = styled.div`
+//   /* background-color: white; */
+//   /* padding-left: 250px; */
+//   /* width: 320px;
+//   height: 166px; */
+// `
 
-const Icon2 = styled.div`
+const ForMobileIcon = styled.div`
   @media (max-width: 950px) {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -188,27 +279,20 @@ const IconTitle = styled.div`
   }
 `
 
-const IntroBox = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding-top: 100px;
+// const IntroBox = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   padding-top: 100px;
 
-  @media (max-width: 950px) {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    margin-left: -5px;
-  }
-`
+//   @media (max-width: 950px) {
+//     padding-top: 60px;
+//     padding-bottom: 60px;
+//     margin-left: -5px;
+//   }
+// `
 
 const BoxBorder = styled.div`
-  /* border-width: 1px;
-  border-radius: 2px;
-  border-style: solid;
-  border-color: #191b19;
-  width: 450px;
-  height: 210px;
-  padding-left: 20px; */
   margin-bottom: 200px;
 
   @media (max-width: 950px) {
@@ -232,16 +316,14 @@ const ContentTitle = styled.div`
   text-align: left;
 `
 
-const ContentTitleForRU = styled.div`
-  font-size: 40px;
+const ContentTitleForRU = styled(ContentTitle)`
+  /* font-size: 40px;
   font-weight: 600;
   font-family: poppinsMedium;
   background: linear-gradient(to right, #5574FF, #AF0BD9);
   -webkit-background-clip: text;
-  color: transparent;
+  color: transparent; */
 
-  /* background: green; */
-  /* color: #FFFFFF; */
   width: 1280px;
   height: 116px;
   text-align: center;
@@ -282,12 +364,6 @@ const BoxContent = styled.div`
   opacity: 0.4;
   text-align: left;
   /* background: green; */
-
-  /* padding-top: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 40px;
-  text-align: left; */
 `
 
 const News = styled.div`
@@ -315,34 +391,6 @@ const NewsDate = styled.div`
   color: #FFFFFF;
 `
 
-const CTBigText = styled.div`
-  position: absolute;
-  opacity: 0.06;
-  color: #5771FE;
-  font-size: 100px;
-  font-family: samsung;
-  z-index: 1;
-  width: 100%;
-  /* background-color: #243a10; */
-
-  @media (max-width: 950px) {
-    font-size: 50px;
-  }
-`
-
-const CTSmallText = styled.div`
-  color: #FFFFFF;
-  font-size: 50px;
-  font-family: samsung;
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-
-  @media (max-width: 950px) {
-    font-size: 30px;
-  }
-`
-
 const KeyFeature = styled.div`
   display: flex;
   justify-content: center;
@@ -352,7 +400,6 @@ const KeyFeature = styled.div`
 
 const KFimage = styled.div`
   @media (max-width: 950px) {
-    /* transform: scale(0.7); */
     display: none;
   }
 `
@@ -368,13 +415,15 @@ const KFTxtBorder = styled.div`
   justify-content: space-around;
 `
 
-const KFContent = styled.div`
+const KFContent = styled.div<{ align?: string, width?: number }>`
   color: #FFFFFF;
   font-size: 18px;
   font-family: poppinsRegular;
   font-weight: bold;
-  text-align: right;
-  width: 335px;
+  text-align: ${({ align }) => (align ? align : 'right')};
+  width: ${({ width }) => (width ? width + 'px' : '335px')};
+  /* text-align: right;
+  width: 335px; */
 
   @media (max-width: 950px) {
     text-align: left;
@@ -382,45 +431,16 @@ const KFContent = styled.div`
   }
 `
 
-const KFContentSmall = styled.div`
+const KFContentSmall = styled.div<{ align?: string, left?: number }>`
   color: #FFFFFF;
   font-size: 14px;
   font-family: poppinsLight;
   opacity: 0.5;
-  text-align: right;
+  /* text-align: right; */
+  text-align: ${({ align }) => (align ? align : 'right')};
   width: 280px;
-  margin-left: 55px;
-
-  @media (max-width: 950px) {
-    margin-left: 45px;
-    margin-top: 5px;
-    text-align: left;
-    width: 250px;
-  }
-`
-
-const KFContent2 = styled.div`
-  color: #FFFFFF;
-  font-size: 18px;
-  font-family: poppinsRegular;
-  font-weight: bold;
-  text-align: left;
-  width: 280px;
-
-  @media (max-width: 950px) {
-    text-align: left;
-    width: 260px;
-  }
-`
-
-const KFContentSmall2 = styled.div`
-  color: #FFFFFF;
-  font-size: 14px;
-  font-family: poppinsLight;
-  opacity: 0.5;
-  text-align: left;
-  width: 280px;
-  margin-left: 50px;
+  margin-left: ${({ left }) => (left ? left + 'px' : '55px')};
+  /* margin-left: 55px; */
 
   @media (max-width: 950px) {
     margin-left: 45px;
@@ -526,7 +546,6 @@ const Circle = styled.div`
   border-radius: 50%;
 
   @media (max-width: 950px) {
-    /* opacity: 0; */
     display: none;
   }
 `
@@ -552,64 +571,12 @@ const ForMobileSmallCircle = styled(SmallCircle)`
     margin-left: 15px;
   }
 `
-const VerticalLine = styled.div`
+const VerticalLine = styled.div<{ height?: number, color?: string}>`
   opacity: 0.6;
-  background: linear-gradient(#AF0BD9, #5574FF);
-  height: 200px;
-  width: 1px;
-  margin-left: 7px;
+  background: ${({ color }) => (color === 'yes' ? 'linear-gradient(#5574FF, #AF0BD9)' 
+    : 'linear-gradient(#AF0BD9, #5574FF)')};
 
-  @media (max-width: 950px) {
-    /* opacity: 0;
-    height: 0px; */
-    display: none;
-  }
-`
-
-const VL410 = styled.div`
-  opacity: 0.6;
-  background: linear-gradient(#AF0BD9, #5574FF);
-  height: 410px;
-  width: 1px;
-  margin-left: 7px;
-
-  @media (max-width: 950px) {
-    /* opacity: 0;
-    height: 0px; */
-    display: none;
-  }
-`
-
-const VL340 = styled.div`
-  opacity: 0.6;
-  background: linear-gradient(#AF0BD9, #5574FF);
-  height: 340px;
-  width: 1px;
-  margin-left: 7px;
-
-  @media (max-width: 950px) {
-    /* opacity: 0;
-    height: 0px; */
-    display: none;
-  }
-`
-
-const VL400 = styled.div`
-  opacity: 0.6;
-  background: linear-gradient(#AF0BD9, #5574FF);
-  height: 400px;
-  width: 1px;
-  margin-left: 7px;
-
-  @media (max-width: 950px) {
-    display: none;
-  }
-`
-
-const VerticalLine2 = styled.div`
-  opacity: 0.6;
-  background: linear-gradient(#5574FF, #AF0BD9);
-  height: 200px;
+  height: ${({ height }) => (height ? height + 'px' : '200px')};
   width: 1px;
   margin-left: 7px;
 
@@ -743,21 +710,40 @@ const Space = styled.div<{ width?: number, height?: number }>`
 `
 
 
-function App() {
+export default function App() {
 
   const [email, setEmail] = useState('');
 
   return (
     <BG><Body>
-      <DuetLogo><img width="176px" height="32px" src={logo} alt="logo" /></DuetLogo>
+      <FlexLayout justify="space-between">
+        <DuetLogo><img width="176px" height="32px" src={logo} alt="logo" /></DuetLogo>
+        <MenuList>
+          <Menu>DOC</Menu>
+          
+          <WebApp>
+            <Menu>WEBAPP</Menu>
+            <AppList>
+              <ul>
+                <AppItem>ETH</AppItem>
+                <AppItem>BSC</AppItem>
+              </ul>
+            </AppList>
+          </WebApp>
+        </MenuList>
+      </FlexLayout>
+
+      <Space height={80} />
 
       <DuetIntro>
-        <Mesh><img width="90%" src={mesh} alt="mesh" /></Mesh>
+        {/* <Mesh><img width="90%" src={mesh} alt="mesh" /></Mesh> */}
+        <Wave />
         <Brand><img width="612px" height="80px" src={brand} alt="brand" /></Brand>
         {/* <Brand>A Multi-chain Synthetic Asset Protocol</Brand> */}
         <SubTitle>A Parallel Universe Which Turns Flat Assets Into Sharp Assets</SubTitle>
         <WPDiv><WhitePaper onClick={() => submit(email)}>White Paper</WhitePaper></WPDiv>
       </DuetIntro>
+      <Space height={200} />
 
       <FlexLayout>
         <ContentTitle>What is Duet Protocol</ContentTitle>
@@ -777,9 +763,9 @@ function App() {
       <ContentTitle>Overview</ContentTitle>
       <Space height={60} />
       <FlexLayout justify='space-around'>
-        <Icon><img src={icon1} alt="icon1" /><IconTitle>Reliability</IconTitle></Icon>
-        <Icon2><img src={icon2} alt="icon2" /><IconTitle>Availability</IconTitle></Icon2>
-        <Icon><img src={icon3} alt="icon3" /><IconTitle>Scalability</IconTitle></Icon>
+        <div><img src={icon1} /><IconTitle>Reliability</IconTitle></div>
+        <ForMobileIcon><img src={icon2} /><IconTitle>Availability</IconTitle></ForMobileIcon>
+        <div><img src={icon3} /><IconTitle>Scalability</IconTitle></div>
       </FlexLayout>
       
       <Space height={80} />
@@ -840,33 +826,34 @@ function App() {
         <KFTxtBorder>
           <TxtCircle>
             <SmallCircle /><ForMobileSmallCircle />
-            <KFContent2>Music theme NFT</KFContent2>
+            <KFContent align="left" width={280}>Music theme NFT</KFContent>
           </TxtCircle>
 
-          <KFContentSmall2>offering entertaining gamification schemes</KFContentSmall2>
+          <KFContentSmall align="left" left={50}>offering entertaining 
+          gamification schemes</KFContentSmall>
 
           <TxtCircle>
             <SmallCircle /><ForMobileSmallCircle />
-            <KFContent2>Unique token releasing scheme</KFContent2>
+            <KFContent align="left" width={280}>Unique token releasing scheme</KFContent>
           </TxtCircle>
 
-          <KFContentSmall2>to ensure project sustainability</KFContentSmall2>
+          <KFContentSmall align="left" left={50}>to ensure project sustainability</KFContentSmall>
           
           <TxtCircle>
             <SmallCircle /><ForMobileSmallCircle />
-            <KFContent2>Broader collateral acceptance</KFContent2>
+            <KFContent align="left" width={280}>Broader collateral acceptance</KFContent>
           </TxtCircle>
 
-          <KFContentSmall2>including yield-bearing assets 
-            (yToken, cToken, LPToken, etc.)</KFContentSmall2>
+          <KFContentSmall align="left" left={50}>including yield-bearing assets 
+            (yToken, cToken, LPToken, etc.)</KFContentSmall>
           
           <TxtCircle>
             <SmallCircle /><ForMobileSmallCircle />
-            <KFContent2>Governed by DAO</KFContent2>
+            <KFContent align="left" width={280}>Governed by DAO</KFContent>
           </TxtCircle>
 
-          <KFContentSmall2>delegate power to the users in a 
-            transparent & censorship-resistance way</KFContentSmall2>
+          <KFContentSmall align="left" left={50}>delegate power to the users in a 
+            transparent & censorship-resistance way</KFContentSmall>
         </KFTxtBorder>
       </KeyFeature>
 
@@ -874,8 +861,7 @@ function App() {
       <Space height={60} />
       <RoadMap>
         <RMDiv1>
-          <Circle></Circle>
-          <VerticalLine></VerticalLine>
+          <Circle /><VerticalLine />
         </RMDiv1>
         <RMDiv1>
           <RoadMapTitle>April 2021</RoadMapTitle>
@@ -889,8 +875,7 @@ function App() {
         </ForMobile>
 
         <RMDiv2>
-          <Circle></Circle>
-          <VL410></VL410>
+          <Circle /><VerticalLine height={410} />
         </RMDiv2>
         <RMDiv2>
           <RoadMapTitle>Q3 2021</RoadMapTitle>
@@ -906,8 +891,7 @@ function App() {
         </ForMobile>
 
         <RMDiv3>
-          <Circle></Circle>
-          <VL340></VL340>
+          <Circle /><VerticalLine height={340} />
         </RMDiv3>
         <RMDiv3>
           <RoadMapTitle>Q1 2022</RoadMapTitle>
@@ -923,8 +907,7 @@ function App() {
         </ForMobile>
 
         <RMDiv4>
-          <Circle></Circle>
-          <VL400></VL400>
+          <Circle /><VerticalLine height={400} />
         </RMDiv4>
         <RMDiv4>
           <RoadMapTitle>Q3 2022</RoadMapTitle>
@@ -938,8 +921,7 @@ function App() {
 
       <RoadMap>
         <RMDiv5>
-          <VerticalLine2></VerticalLine2>
-          <Circle></Circle>
+          <VerticalLine color="yes" /><Circle />
         </RMDiv5>
         <RMDiv6>
           <RoadMapTitle>Q2 2021</RoadMapTitle>
@@ -948,8 +930,7 @@ function App() {
         </RMDiv6>
 
         <RMDiv5>
-          <VerticalLine2></VerticalLine2>
-          <Circle></Circle>
+          <VerticalLine color="yes" /><Circle />
         </RMDiv5>
         <RMDiv6>
           <RoadMapTitle>Q4 2021</RoadMapTitle>
@@ -959,8 +940,7 @@ function App() {
         </RMDiv6>
 
         <RMDiv5>
-          <VerticalLine2></VerticalLine2>
-          <Circle></Circle>
+          <VerticalLine color="yes" /><Circle />
         </RMDiv5>
         <RMDiv6>
           <RoadMapTitle>Q2 2022</RoadMapTitle>
@@ -1107,6 +1087,3 @@ async function saveEmail(email: string) {
   }
 }
 //----------------------------------------------------------------
-
-
-export default App;
