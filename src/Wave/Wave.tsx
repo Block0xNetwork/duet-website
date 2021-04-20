@@ -2,14 +2,12 @@ import { FC, useEffect, useRef, CSSProperties } from "react";
 import startWave from "./index";
 
 const styles: CSSProperties = {
-  // zIndex: -1,
-  zIndex: 1,
+  zIndex: -1,
   position: "absolute",
   top: 0,
   left: 0,
   width: "100%",
-  height: "100%",
-  // background: "#FFFFFF",
+  height: "100vh",
 };
 
 const Wave: FC = () => {
