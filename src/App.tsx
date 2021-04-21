@@ -36,6 +36,7 @@ const Body = styled.div`
   /* background-color: #616857; */
   max-width: 1280px;
   margin: 0 auto;
+  font-size: 0;
 
   @media (max-width: 1300px) {
     padding-left: 20px;
@@ -123,10 +124,15 @@ const AppItem = styled.div`
   font-weight: 600;
   color: #FFFFFF;
   cursor: pointer;
+  transition: opacity .3s;
 
   /* :hover {
     transform: scale(1.05);
   } */
+
+  &:hover {
+    opacity: .6;
+  }
 
   @media (max-width: 950px) {
   }
@@ -312,12 +318,6 @@ const ContentTitle = styled.div`
   font-size: 40px;
   font-weight: 600;
   font-family: poppinsMedium;
-  background: linear-gradient(to right, #5574FF, #AF0BD9);
-  -webkit-background-clip: text;
-  color: transparent;
-
-  /* background: green; */
-  /* color: #FFFFFF; */
   text-align: left;
   max-width: 273px;
   min-height: 116px;
@@ -326,6 +326,12 @@ const ContentTitle = styled.div`
     font-size: .48rem;
     line-height: .72rem;
     min-height: 2rem;
+  }
+
+  span {
+    background: linear-gradient(to right, #5574FF, #AF0BD9);
+    -webkit-background-clip: text;
+    color: transparent;
   }
 `
 
@@ -559,6 +565,7 @@ const RoadMap = styled.div`
 
   @media (max-width: 750px) {
     display: block;
+    text-align: left;
   }
 `
 
@@ -704,7 +711,8 @@ const VerticalLine = styled.div<{ height?: number, color?: string }>`
 
 const RoadMapTitle = styled.div`
   font-size: 24px;
-  font-family: poppinsRegular;
+  font-family: poppinsMedium;
+  font-weight: 500;
   /* background: linear-gradient(to right, #5574FF, #AF0BD9); */
   background: linear-gradient(270deg, #AF0BD9 0%, #5574FF 100%);
   -webkit-background-clip: text;
@@ -717,8 +725,9 @@ const RoadMapTitle = styled.div`
   }
 
   @media (max-width: 750px) {
-    font-size: .32rem;
-    line-height: .4rem;
+    display: inline-block;
+    font-size: .4rem;
+    line-height: .5rem;
     padding-left: 0;
     padding-bottom: .2rem;
   }
@@ -833,7 +842,6 @@ const Copyright = styled.div`
   font-family: PingFangSC-Regular;
   opacity: 0.29;
   font-weight: 400;
-  margin-top: 165px;
   margin-bottom: 40px;
 
   @media (max-width: 950px) {
@@ -888,7 +896,9 @@ export default function App() {
 
       <Space height={460} mHeight={3.06}/>
       <SplitView>
-        <ContentTitle>What is Duet Protocol</ContentTitle>
+        <ContentTitle>
+          <span>What is Duet Protocol</span>
+        </ContentTitle>
         <WhatIsDuet>Duet protocol (Duet) is a Multi-chain synthetic asset protocol
           that sharpens all assets for use in the blockchain world. A duet in music
           refers to a piece of music where two people play different parts or melodies.
@@ -899,13 +909,17 @@ export default function App() {
       <PcOnly>
         <Space height={200} mHeight={1.8}/>
         <div>
-          <ContentTitle>How It Works</ContentTitle>
+          <ContentTitle>
+            <span>How It Works</span>
+          </ContentTitle>
           <KFimage><img src={howIcon} alt="keyfeature"/></KFimage>
         </div>
       </PcOnly>
 
       <Space height={200} mHeight={1.8}/>
-      <ContentTitle>Overview</ContentTitle>
+      <ContentTitle>
+        <span>Overview</span>
+      </ContentTitle>
       <FlexLayout justify='space-around'>
         <OverviewItem><img src={icon1} alt=""/><IconTitle>Reliability</IconTitle></OverviewItem>
         <OverviewItem><img src={icon2} alt=""/><IconTitle>Availability</IconTitle></OverviewItem>
@@ -929,7 +943,9 @@ export default function App() {
       </FlexLayout>
 
       <Space height={200} mHeight={1.8}/>
-      <KeyFeatureTitle>Key Features</KeyFeatureTitle>
+      <KeyFeatureTitle>
+        <span>Key Features</span>
+      </KeyFeatureTitle>
       <KeyFeature>
         <KFTxtBorder>
           <TxtCircle>
@@ -999,7 +1015,9 @@ export default function App() {
       </KeyFeature>
 
       <Space height={200} mHeight={1.8}/>
-      <ContentTitle>Road Map</ContentTitle>
+      <ContentTitle>
+        <span>Road Map</span>
+      </ContentTitle>
       <RoadMap>
         <RMDiv1>
           <Circle/><VerticalLine/>
@@ -1090,7 +1108,9 @@ export default function App() {
         </RMDiv6>
       </RoadMap>
       <Space height={200} mHeight={1.8}/>
-      <ContentTitle>Partner</ContentTitle>
+      <ContentTitle>
+        <span>Partner</span>
+      </ContentTitle>
 
       <PcPartners>
         <img width="320px" height="166px" src={omni} alt=""/>
@@ -1115,7 +1135,9 @@ export default function App() {
       </MobilePartners>
 
       <Space height={160} mHeight={1.8}/>
-      <ContentTitle>News</ContentTitle>
+      <ContentTitle>
+        <span>News</span>
+      </ContentTitle>
 
       <NewsContainer>
         <NewsItem>
@@ -1145,7 +1167,9 @@ export default function App() {
       </NewsContainer>
 
       <Space height={200} mHeight={1.8}/>
-      <ContentTitleForRU>Receive updates</ContentTitleForRU>
+      <ContentTitleForRU>
+        <span>Receive updates</span>
+      </ContentTitleForRU>
 
       <Submit>
         <SubmitInput onChange={event => setEmail(event.target.value)}
