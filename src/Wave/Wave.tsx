@@ -1,14 +1,15 @@
-import { FC, useEffect, useRef, CSSProperties } from "react";
+import {FC, useEffect, useRef,} from "react";
 import startWave from "./index";
+import styled from "styled-components";
 
-const styles: CSSProperties = {
-  zIndex: -1,
-  position: "absolute",
-  top: 0,
-  left: 0,
-  width: "100%",
-  height: "100vh",
-};
+const WaveCanvas = styled.canvas`
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+`
 
 const Wave: FC = () => {
   const canvasRef = useRef(null);
@@ -16,7 +17,7 @@ const Wave: FC = () => {
   useEffect(() => {
     startWave(canvasRef.current);
   }, []);
-  return <canvas ref={canvasRef} style={styles} />;
+  return <WaveCanvas ref={canvasRef}/>;
 };
 
 export default Wave;

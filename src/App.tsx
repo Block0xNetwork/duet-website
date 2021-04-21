@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import logo from './assets/svg/logo.svg';
 import logoMobile from './assets/svg/logo-mobile.svg';
 import brand from './assets/svg/brand.svg';
-import mesh from './assets/images/mesh-png.png';
 import icon1 from './assets/svg/icon-1.svg';
 import icon2 from './assets/svg/icon-2.svg';
 import icon3 from './assets/svg/icon-3.svg';
@@ -28,6 +27,7 @@ import medium from './assets/images/medium.png';
 import telegram from './assets/images/telegram.png';
 import weibo from './assets/images/weibo.png';
 import React, {useState} from 'react';
+import howIcon from './assets/images/how-it-work.png';
 
 import Wave from './Wave/Wave';
 
@@ -43,8 +43,8 @@ const Body = styled.div`
   }
 
   @media (max-width: 750px) {
-    padding-left: .2rem;
-    padding-right: .2rem;
+    padding-left: .4rem;
+    padding-right: .4rem;
   }
 `
 
@@ -132,17 +132,12 @@ const AppItem = styled.div`
   }
 `
 
-const DuetIntro = styled.div` // todo remove space
+const DuetIntro = styled.div`
   position: relative;
-  padding-top: 212px;
-  padding-bottom: 260px;
   font-size: 0;
 
   @media (max-width: 750px) {
     box-sizing: border-box;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-top: 1.6rem;
   }
 
 `
@@ -225,6 +220,31 @@ const FlexLayout = styled.div<{ justify?: any }>`
   }
 `
 
+const PcPartners = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  font-size: 0;
+
+  @media (max-width: 950px) {
+    display: none;
+  }
+`
+
+const MobilePartners = styled.div`
+  display: none;
+
+  @media (max-width: 950px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: .3rem;
+
+    img {
+      height: 1.66rem;
+    }
+  }
+`
+
 const SplitView = styled.div`
   display: flex;
   justify-content: space-between;
@@ -233,11 +253,6 @@ const SplitView = styled.div`
     display: block;
   }
 `
-
-const DuetProtocol = styled(SplitView)`
-  margin-top: 3.06rem;
-`
-
 // const Icon = styled.div`
 //   /* background-color: white; */
 //   /* padding-left: 250px; */
@@ -245,10 +260,20 @@ const DuetProtocol = styled(SplitView)`
 //   height: 166px; */
 // `
 
-const ForMobileIcon = styled.div`
-  @media (max-width: 950px) {
-    padding-top: 60px;
-    padding-bottom: 60px;
+const OverviewItem = styled.div`
+  @media (max-width: 750px) {
+    display: flex;
+    align-items: center;
+    line-height: 1.6rem;
+
+    img {
+      height: 1.6rem;
+      vertical-align: middle;
+    }
+
+    & + & {
+      margin-top: 1rem;
+    }
   }
 `
 
@@ -259,7 +284,11 @@ const IconTitle = styled.div`
   padding-top: 20px;
 
   @media (max-width: 950px) {
-    font-size: 24px;
+    text-align: left;
+    padding-top: 0;
+    margin-left: .6rem;
+    font-size: .4rem;
+    flex: 1;
   }
 `
 
@@ -277,11 +306,6 @@ const IconTitle = styled.div`
 // `
 
 const BoxBorder = styled.div`
-  margin-bottom: 200px;
-
-  @media (max-width: 950px) {
-    border-width: 0px;
-  }
 `
 
 const ContentTitle = styled.div`
@@ -299,8 +323,9 @@ const ContentTitle = styled.div`
   min-height: 116px;
 
   @media (max-width: 750px) {
-    font-size: .4rem;
-    line-height: .5rem;
+    font-size: .48rem;
+    line-height: .72rem;
+    min-height: 2rem;
   }
 `
 
@@ -313,6 +338,10 @@ const ContentTitleForRU = styled(ContentTitle)`
   color: transparent; */
   max-width: initial;
   text-align: center;
+
+  @media (max-width: 750px) {
+    text-align: left;
+  }
 `
 
 const WhatIsDuet = styled.div`
@@ -325,19 +354,16 @@ const WhatIsDuet = styled.div`
   text-align: left;
   color: #FFFFFF;
   margin-left: 20px;
-  margin-bottom: 200px;
 
   @media (max-width: 750px) {
     margin-left: 0;
-    margin-top: .4rem;
     font-size: .3rem;
-    line-height: .4rem;
+    line-height: .48rem;
     width: auto;
   }
 `
 
 const BoxTitle = styled.div`
-  /* background: green; */
   text-align: left;
   width: 500px;
   height: 45px;
@@ -350,7 +376,7 @@ const BoxTitle = styled.div`
   @media (max-width: 750px) {
     width: auto;
     height: auto;
-    font-size: .5rem;
+    font-size: .4rem;
     line-height: .6rem;
   }
 `
@@ -358,7 +384,7 @@ const BoxTitle = styled.div`
 const BoxContent = styled.div`
   margin-top: 16px;
   width: 500px;
-  height: 48px;
+  //height: 48px;
   font-size: 16px;
   font-family: poppinsMedium;
   font-weight: 500;
@@ -366,11 +392,44 @@ const BoxContent = styled.div`
   opacity: 0.4;
   text-align: left;
   @media (max-width: 750px) {
-    margin-top: .4rem;
+    margin-top: .2rem;
     width: auto;
     height: auto;
-    font-size: .34rem;
-    line-height: .44rem;
+    font-size: .32rem;
+    line-height: .48rem;
+  }
+`
+
+const NewsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 27px;
+
+  @media (max-width: 750px) {
+    display: block;
+    white-space: nowrap;
+    overflow: auto;
+  }
+`
+
+const NewsItem = styled.div`
+
+  img  {
+    width: 300px;
+    height: 180px;
+  }
+  @media (max-width: 750px) {
+    display: inline-block;
+    width: 4rem;
+
+    img  {
+      width: 4rem;
+      height: 2.4rem;
+    }
+
+    & + & {
+      margin-left: .8rem;
+    }
   }
 `
 
@@ -385,6 +444,16 @@ const News = styled.div`
   color: #FFFFFF;
   margin-top: 20px;
   margin-bottom: 20px;
+
+  @media (max-width: 750px) {
+    margin-top: .36rem;
+    margin-bottom: .29rem;
+    width: auto;
+    height: auto;
+    font-size: .28rem;
+    line-height: .42rem;
+    white-space: initial;
+  }
 `
 
 const NewsDate = styled.div`
@@ -397,13 +466,27 @@ const NewsDate = styled.div`
   font-family: poppinsRegular;
   font-weight: 400;
   color: #FFFFFF;
+
+  @media (max-width: 750px) {
+    font-size: .22rem;
+    line-height: .33rem;
+  }
+`
+
+const KeyFeatureTitle = styled(ContentTitle)`
+  min-height: 0;
 `
 
 const KeyFeature = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 200px;
+`
+
+const PcOnly = styled.div`
+  @media (max-width: 750px) {
+    display: none;
+  }
 `
 
 const KFimage = styled.div`
@@ -415,6 +498,10 @@ const KFimage = styled.div`
 const TxtCircle = styled.div`
   display: flex;
   margin-top: 20px;
+
+  @media (max-width: 750px) {
+    margin-top: 0;
+  }
 `
 
 const KFTxtBorder = styled.div`
@@ -423,7 +510,7 @@ const KFTxtBorder = styled.div`
   justify-content: space-around;
 
   @media (max-width: 750px) {
-    margin-top: .4rem;
+    //margin-top: .4rem;
   }
 `
 
@@ -438,8 +525,11 @@ const KFContent = styled.div<{ align?: string, width?: number }>`
   width: 335px; */
 
   @media (max-width: 950px) {
+    margin-top: .8rem;
     text-align: left;
-    width: 260px;
+    width: auto;
+    font-size: .4rem;
+    line-height: .6rem;
   }
 `
 
@@ -455,10 +545,12 @@ const KFContentSmall = styled.div<{ align?: string, left?: number }>`
   /* margin-left: 55px; */
 
   @media (max-width: 950px) {
-    margin-left: 45px;
-    margin-top: 5px;
+    margin-left: 0;
+    margin-top: .2rem;
     text-align: left;
-    width: 250px;
+    width: auto;
+    font-size: .32rem;
+    line-height: .48rem;
   }
 `
 
@@ -472,6 +564,10 @@ const RoadMap = styled.div`
     flex-wrap: nowrap;
     align-items: center;
   }
+
+  @media (max-width: 750px) {
+    display: block;
+  }
 `
 
 const RMDiv1 = styled.div`
@@ -479,8 +575,8 @@ const RMDiv1 = styled.div`
   padding-top: 210px;
 
   @media (max-width: 950px) {
-    padding-left: 0px;
-    padding-top: 0px;
+    padding-left: 0;
+    padding-top: 0;
   }
 `
 
@@ -490,6 +586,10 @@ const RMDiv2 = styled.div`
   @media (max-width: 950px) {
     padding-left: 0px;
     padding-top: 30px;
+  }
+
+  @media (max-width: 750px) {
+    padding-top: .8rem ;
   }
 `
 
@@ -501,6 +601,9 @@ const RMDiv3 = styled.div`
     padding-left: 0px;
     padding-top: 30px;
   }
+  @media (max-width: 750px) {
+    padding-top: .8rem;
+  }
 `
 
 const RMDiv4 = styled.div`
@@ -511,6 +614,10 @@ const RMDiv4 = styled.div`
     padding-left: 0px;
     padding-top: 30px;
   }
+
+  @media (max-width: 750px) {
+    padding-top: .8rem;
+  }
 `
 
 const RMDiv5 = styled.div`
@@ -518,6 +625,10 @@ const RMDiv5 = styled.div`
 
   @media (max-width: 950px) {
     padding-left: 0px;
+  }
+
+  @media (max-width: 750px) {
+    display: none;
   }
 `
 
@@ -528,6 +639,10 @@ const RMDiv6 = styled.div`
   @media (max-width: 950px) {
     display: none;
   }
+
+  @media (max-width: 750px) {
+    padding-top: .8rem;
+  }
 `
 
 const ForMobile = styled.div`
@@ -535,6 +650,11 @@ const ForMobile = styled.div`
   @media (max-width: 950px) {
     display: block;
     padding-top: 50px;
+  }
+
+  @media (max-width: 750px) {
+    display: block;
+    padding-top: .8rem;
   }
 `
 
@@ -576,13 +696,6 @@ const SmallCircle = styled.div`
   }
 `
 
-const ForMobileSmallCircle = styled(SmallCircle)`
-  display: none;
-  @media (max-width: 950px) {
-    display: block;
-    margin-left: 15px;
-  }
-`
 const VerticalLine = styled.div<{ height?: number, color?: string }>`
   opacity: 0.6;
   background: ${({color}) => (color === 'yes' ? 'linear-gradient(#5574FF, #AF0BD9)'
@@ -610,6 +723,13 @@ const RoadMapTitle = styled.div`
   @media (max-width: 950px) {
     padding-left: 25px;
   }
+
+  @media (max-width: 750px) {
+    font-size: .32rem;
+    line-height: .4rem;
+    padding-left: 0;
+    padding-bottom: .2rem;
+  }
 `
 
 const RoadMapContent = styled.div`
@@ -624,6 +744,14 @@ const RoadMapContent = styled.div`
     width: 260px;
     padding-left: 25px;
   }
+
+  @media (max-width: 950px) {
+    max-width: initial;
+    padding-left: 0;
+    width: auto;
+    font-size: .28rem;
+    line-height: .42rem;
+  }
 `
 
 const Submit = styled.div`
@@ -631,7 +759,6 @@ const Submit = styled.div`
   justify-content: center;
 
   @media (max-width: 950px) {
-    flex-flow: column;
     align-items: center;
   }
 `
@@ -651,7 +778,11 @@ const SubmitInput = styled.input`
   text-indent: 20px;
 
   @media (max-width: 950px) {
-    width: 70%;
+    box-sizing: border-box;
+    width: auto;
+    flex: 1;
+    height: .8rem;
+    font-size: .26rem;
   }
 `
 
@@ -675,22 +806,19 @@ const SubmitButton = styled.button`
   }
 
   @media (max-width: 950px) {
-    width: 74%;
-    margin-left: 0px;
-    margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    box-sizing: border-box;
+    width: 2rem;
+    height: .8rem;
+    font-size: .26rem;
   }
 `
 
 const Media = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 160px;
   margin-bottom: 40px;
 
   @media (max-width: 950px) {
-    margin-top: .8rem;
     margin-bottom: 0;
   }
 `
@@ -722,9 +850,14 @@ const Copyright = styled.div`
   }
 `
 
-const Space = styled.div<{ width?: number, height?: number }>`
+const Space = styled.div<{ width?: number, height?: number, mWidth?: number, mHeight?: number }>`
   width: ${({width}) => (width ? width + 'px' : '0px')};
   height: ${({height}) => (height ? height + 'px' : '0px')};
+
+  @media (max-width: 750px) {
+    width: ${({mWidth}) => (mWidth ? mWidth + 'rem' : '0px')};
+    height: ${({mHeight}) => (mHeight ? mHeight + 'rem' : '0px')};
+  }
 `
 
 export default function App() {
@@ -751,6 +884,8 @@ export default function App() {
           </WebApp>
         </MenuList>
       </HeaderView>
+
+      <Space height={212} mHeight={1.6}/>
       <DuetIntro>
         {/* <Mesh><img width="90%" src={mesh} alt="mesh" /></Mesh> */}
         <Brand><img src={brand} alt="brand"/></Brand>
@@ -758,46 +893,54 @@ export default function App() {
         <SubTitle>A Parallel Universe Which Turns Flat Assets Into Sharp Assets</SubTitle>
         <WhitePaper onClick={() => submit(email)}>White Paper</WhitePaper>
       </DuetIntro>
-      <DuetProtocol>
+
+      <Space height={460} mHeight={3.06}/>
+      <SplitView>
         <ContentTitle>What is Duet Protocol</ContentTitle>
         <WhatIsDuet>Duet protocol (Duet) is a Multi-chain synthetic asset protocol
           that sharpens all assets for use in the blockchain world. A duet in music
           refers to a piece of music where two people play different parts or melodies.
           Similarly, Duet protocol allows traders to replicate the real-world tradable
           assets in a decentralised finance ecosystem. </WhatIsDuet>
-      </DuetProtocol>
-      <SplitView>
-        <ContentTitle>How It Works</ContentTitle>
-        <KFimage><img src={keyfeature} alt="keyfeature"/></KFimage>
       </SplitView>
-      <Space height={200}/>
+
+      <PcOnly>
+        <Space height={200} mHeight={1.8}/>
+        <div>
+          <ContentTitle>How It Works</ContentTitle>
+          <KFimage><img src={howIcon} alt="keyfeature"/></KFimage>
+        </div>
+      </PcOnly>
+
+      <Space height={200} mHeight={1.8}/>
       <ContentTitle>Overview</ContentTitle>
-      <Space height={60}/>
       <FlexLayout justify='space-around'>
-        <div><img src={icon1}/><IconTitle>Reliability</IconTitle></div>
-        <ForMobileIcon><img src={icon2}/><IconTitle>Availability</IconTitle></ForMobileIcon>
-        <div><img src={icon3}/><IconTitle>Scalability</IconTitle></div>
+        <OverviewItem><img src={icon1} alt=""/><IconTitle>Reliability</IconTitle></OverviewItem>
+        <OverviewItem><img src={icon2} alt=""/><IconTitle>Availability</IconTitle></OverviewItem>
+        <OverviewItem><img src={icon3} alt=""/><IconTitle>Scalability</IconTitle></OverviewItem>
       </FlexLayout>
-      <Space height={80}/>
+      <Space height={80} mHeight={1.6} />
       <FlexLayout>
         <BoxBorder>
           <BoxTitle>Seamless Integration</BoxTitle>
           <BoxContent>from BTC to Tesla, Moutai, and VIX, allocate capital to
             ANY asset with only one crypto wallet</BoxContent>
         </BoxBorder>
+
         <Space width={140}/>
+        <Space mHeight={1}/>
         <BoxBorder>
           <BoxTitle>Hybrid-collateralization Model</BoxTitle>
           <BoxContent>algo based hyper-collateralization model to generate
             on-chain synthetic assets</BoxContent>
         </BoxBorder>
       </FlexLayout>
-      <ContentTitle>Key Features</ContentTitle>
 
+      <Space height={200} mHeight={1.8}/>
+      <KeyFeatureTitle>Key Features</KeyFeatureTitle>
       <KeyFeature>
         <KFTxtBorder>
           <TxtCircle>
-            <ForMobileSmallCircle/>
             <KFContent>Algo based hyper-collateralization model</KFContent>
             <SmallCircle/>
           </TxtCircle>
@@ -806,7 +949,6 @@ export default function App() {
             enhancing system robustness</KFContentSmall>
 
           <TxtCircle>
-            <ForMobileSmallCircle/>
             <KFContent>Any asset class</KFContent>
             <SmallCircle/>
           </TxtCircle>
@@ -814,7 +956,6 @@ export default function App() {
           <KFContentSmall>can be minted on-chain</KFContentSmall>
 
           <TxtCircle>
-            <ForMobileSmallCircle/>
             <KFContent>Collateral earning multiplier</KFContent>
             <SmallCircle/>
           </TxtCircle>
@@ -822,7 +963,6 @@ export default function App() {
           <KFContentSmall>reduce the opportunity cost of user migration</KFContentSmall>
 
           <TxtCircle>
-            <ForMobileSmallCircle/>
             <KFContent>DeFi coupling modules</KFContent>
             <SmallCircle/>
           </TxtCircle>
@@ -834,7 +974,7 @@ export default function App() {
 
         <KFTxtBorder>
           <TxtCircle>
-            <SmallCircle/><ForMobileSmallCircle/>
+            <SmallCircle/>
             <KFContent align="left" width={280}>Music theme NFT</KFContent>
           </TxtCircle>
 
@@ -842,14 +982,14 @@ export default function App() {
             gamification schemes</KFContentSmall>
 
           <TxtCircle>
-            <SmallCircle/><ForMobileSmallCircle/>
+            <SmallCircle/>
             <KFContent align="left" width={280}>Unique token releasing scheme</KFContent>
           </TxtCircle>
 
           <KFContentSmall align="left" left={50}>to ensure project sustainability</KFContentSmall>
 
           <TxtCircle>
-            <SmallCircle/><ForMobileSmallCircle/>
+            <SmallCircle/>
             <KFContent align="left" width={280}>Broader collateral acceptance</KFContent>
           </TxtCircle>
 
@@ -857,7 +997,7 @@ export default function App() {
             (yToken, cToken, LPToken, etc.)</KFContentSmall>
 
           <TxtCircle>
-            <SmallCircle/><ForMobileSmallCircle/>
+            <SmallCircle/>
             <KFContent align="left" width={280}>Governed by DAO</KFContent>
           </TxtCircle>
 
@@ -865,8 +1005,9 @@ export default function App() {
             transparent & censorship-resistance way</KFContentSmall>
         </KFTxtBorder>
       </KeyFeature>
+
+      <Space height={200} mHeight={1.8}/>
       <ContentTitle>Road Map</ContentTitle>
-      <Space height={60}/>
       <RoadMap>
         <RMDiv1>
           <Circle/><VerticalLine/>
@@ -956,54 +1097,62 @@ export default function App() {
             the goal of ‘global coverage in-one-wallet’</RoadMapContent>
         </RMDiv6>
       </RoadMap>
-
-      <Space height={200}/>
+      <Space height={200} mHeight={1.8}/>
       <ContentTitle>Partner</ContentTitle>
 
-      <FlexLayout>
-        <img width="320px" height="166px" src={omni}/>
-        <img width="320px" height="166px" src={bitcoin}/>
-        <img width="320px" height="166px" src={dao}/>
-        <img width="320px" height="166px" src={matrix}/>
-        <img width="320px" height="166px" src={ibm}/>
-        <img width="320px" height="166px" src={binance}/>
-        <img width="320px" height="166px" src={microsoft}/>
-        <img width="320px" height="166px" src={ifinance}/>
-      </FlexLayout>
+      <PcPartners>
+        <img width="320px" height="166px" src={omni} alt=""/>
+        <img width="320px" height="166px" src={bitcoin} alt=""/>
+        <img width="320px" height="166px" src={dao} alt=""/>
+        <img width="320px" height="166px" src={matrix} alt=""/>
+        <img width="320px" height="166px" src={ibm} alt=""/>
+        <img width="320px" height="166px" src={binance} alt=""/>
+        <img width="320px" height="166px" src={microsoft} alt=""/>
+        <img width="320px" height="166px" src={ifinance} alt=""/>
+      </PcPartners>
 
-      <Space height={160}/>
+      <MobilePartners>
+        <img src={omni} alt=""/>
+        <img src={bitcoin} alt=""/>
+        <img src={dao} alt=""/>
+        <img src={matrix} alt=""/>
+        <img src={ibm} alt=""/>
+        <img src={binance} alt=""/>
+        <img src={microsoft} alt=""/>
+        <img src={ifinance} alt=""/>
+      </MobilePartners>
+
+      <Space height={160} mHeight={1.8}/>
       <ContentTitle>News</ContentTitle>
 
-      <FlexLayout>
-        <BoxBorder>
-          <img width="300px" height="180px" src={news1}/>
+      <NewsContainer>
+        <NewsItem>
+          <img src={news1} alt=""/>
           <News>Duet protocol is a synthetic asset protocol that
             allows traditional assets to migrate to high-growth </News>
           <NewsDate>April 13</NewsDate>
-        </BoxBorder>
-        <Space width={26}/>
-        <BoxBorder>
-          <img width="300px" height="180px" src={news2}/>
+        </NewsItem>
+        <NewsItem>
+          <img src={news2} alt=""/>
           <News>Duet protocol is a synthetic asset protocol that
             allows traditional assets to migrate to high-growth </News>
           <NewsDate>April 13</NewsDate>
-        </BoxBorder>
-        <Space width={26}/>
-        <BoxBorder>
-          <img width="300px" height="180px" src={news3}/>
+        </NewsItem>
+        <NewsItem>
+          <img src={news3} alt=""/>
           <News>Duet protocol is a synthetic asset protocol that
             allows traditional assets to migrate to high-growth </News>
           <NewsDate>April 13</NewsDate>
-        </BoxBorder>
-        <Space width={26}/>
-        <BoxBorder>
-          <img width="300px" height="180px" src={news4}/>
+        </NewsItem>
+        <NewsItem>
+          <img src={news4} alt=""/>
           <News>Duet protocol is a synthetic asset protocol that
             allows traditional assets to migrate to high-growth </News>
           <NewsDate>April 13</NewsDate>
-        </BoxBorder>
-      </FlexLayout>
+        </NewsItem>
+      </NewsContainer>
 
+      <Space height={200} mHeight={1.8}/>
       <ContentTitleForRU>Receive updates</ContentTitleForRU>
 
       <Submit>
@@ -1012,6 +1161,7 @@ export default function App() {
         <SubmitButton onClick={() => submit(email)}>Submit</SubmitButton>
       </Submit>
 
+      <Space height={200} mHeight={1.8}/>
       <FlexLayout justify="space-between">
         <Media>
           <MediaIcon><img width="32" src={fb} alt="fb" onClick={goFacebook}/></MediaIcon>
