@@ -498,20 +498,12 @@ const KFimage = styled.div`
 const TxtCircle = styled.div`
   display: flex;
   margin-top: 20px;
-
-  @media (max-width: 750px) {
-    margin-top: 0;
-  }
 `
 
 const KFTxtBorder = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: space-around;
-
-  @media (max-width: 750px) {
-    //margin-top: .4rem;
-  }
 `
 
 const KFContent = styled.div<{ align?: string, width?: number }>`
@@ -891,7 +883,7 @@ export default function App() {
         <Brand><img src={brand} alt="brand"/></Brand>
         {/* <Brand>A Multi-chain Synthetic Asset Protocol</Brand> */}
         <SubTitle>A Parallel Universe Which Turns Flat Assets Into Sharp Assets</SubTitle>
-        <WhitePaper onClick={() => submit(email)}>White Paper</WhitePaper>
+        <WhitePaper onClick={() => submit(email)}>Prelude Mining</WhitePaper>
       </DuetIntro>
 
       <Space height={460} mHeight={3.06}/>
