@@ -872,8 +872,9 @@ export default function App() {
         <DuetLogoMobile src={logoMobile} alt="logo"/>
         <MenuList>
           <Menu>DOC</Menu>
+          <Menu onClick={goEthWebApp}>WEBAPP</Menu>
 
-          <WebApp>
+          {/* <WebApp>
             <Menu>WEBAPP</Menu>
             <AppList>
               <ul>
@@ -881,7 +882,8 @@ export default function App() {
                 <AppItem>BSC</AppItem>
               </ul>
             </AppList>
-          </WebApp>
+          </WebApp> */}
+
         </MenuList>
       </HeaderView>
 
@@ -891,7 +893,7 @@ export default function App() {
         <Brand><img src={brand} alt="brand"/></Brand>
         {/* <Brand>A Multi-chain Synthetic Asset Protocol</Brand> */}
         <SubTitle>A Parallel Universe Which Turns Flat Assets Into Sharp Assets</SubTitle>
-        <WhitePaper onClick={() => submit(email)}>Prelude Mining</WhitePaper>
+        <WhitePaper onClick={goEthWebApp}>Prelude Mining</WhitePaper>
       </DuetIntro>
 
       <Space height={460} mHeight={3.06}/>
@@ -1221,6 +1223,10 @@ function goTelegram() {
 
 function goWeibo() {
   window.open('https://weibo.com/u/7582624963');
+}
+
+function goEthWebApp() {
+  window.open('https://eth-duet.on.fleek.co/');
 }
 
 function checkEmail(email: string) {
