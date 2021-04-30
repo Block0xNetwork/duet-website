@@ -1026,26 +1026,24 @@ export default function App() {
         </RMDiv1>
         <RMDiv1>
           <RoadMapTitle>April 2021</RoadMapTitle>
-          <RoadMapContent>Prelude-mining launch and get the code audited</RoadMapContent>
+          <RoadMapContent>Development and test of Instant DUET/dAsset  Minter and cores</RoadMapContent>
         </RMDiv1>
 
         <ForMobile>
-          <RoadMapTitle>Q2 2021</RoadMapTitle>
-          <RoadMapContent>Launch Ethereum and BSC airdrop and asset
-            minting module</RoadMapContent>
+          <RoadMapTitle>May 2021</RoadMapTitle>
+          <RoadMapContent>IDO and Ethereum launch</RoadMapContent>
         </ForMobile>
 
         <RMDiv2>
           <Circle/><VerticalLine height={410}/>
         </RMDiv2>
         <RMDiv2>
-          <RoadMapTitle>Q3 2021</RoadMapTitle>
-          <RoadMapContent>Launch on NEO. Expanding synthetic asset list to 50+,
-            launch reverse assets, VIX tracker, inflation hedger, etc. </RoadMapContent>
+          <RoadMapTitle>June 2021</RoadMapTitle>
+          <RoadMapContent>IDO and BSC(or other EVM blockchain) launch</RoadMapContent>
         </RMDiv2>
 
         <ForMobile>
-          <RoadMapTitle>Q4 2021</RoadMapTitle>
+          <RoadMapTitle>Q3 2021</RoadMapTitle>
           <RoadMapContent>Launch DUET’s own swap and lending modules;
             dock dAssets with major global lending and trading protocol;
             expand the issuance to more permissionless chains.</RoadMapContent>
@@ -1055,14 +1053,14 @@ export default function App() {
           <Circle/><VerticalLine height={340}/>
         </RMDiv3>
         <RMDiv3>
-          <RoadMapTitle>Q1 2022</RoadMapTitle>
+          <RoadMapTitle>Q4 2021</RoadMapTitle>
           <RoadMapContent>Atomic cross-chain transactions of dAssets based
             on ZK solution;community-based asset management platform based
             on d asset development</RoadMapContent>
         </RMDiv3>
 
         <ForMobile>
-          <RoadMapTitle>Q2 2022</RoadMapTitle>
+          <RoadMapTitle>Q1 2022</RoadMapTitle>
           <RoadMapContent>Covering more than 500 core assets achieving
             the goal of ‘global coverage in-one-wallet’</RoadMapContent>
         </ForMobile>
@@ -1071,7 +1069,7 @@ export default function App() {
           <Circle/><VerticalLine height={400}/>
         </RMDiv4>
         <RMDiv4>
-          <RoadMapTitle>Q3 2022</RoadMapTitle>
+          <RoadMapTitle>Q2 2022</RoadMapTitle>
           <RoadMapContent>First "Chord Chapter"-accept off-chain assets as
             collateral. Migrate data server from traditional IDC to IPFS
             network to realize fully decentralization.</RoadMapContent>
@@ -1085,16 +1083,15 @@ export default function App() {
           <VerticalLine color="yes"/><Circle/>
         </RMDiv5>
         <RMDiv6>
-          <RoadMapTitle>Q2 2021</RoadMapTitle>
-          <RoadMapContent>Launch Ethereum and BSC airdrop and asset
-            minting module</RoadMapContent>
+          <RoadMapTitle>May 2021</RoadMapTitle>
+          <RoadMapContent>IDO and Ethereum launch</RoadMapContent>
         </RMDiv6>
 
         <RMDiv5>
           <VerticalLine color="yes"/><Circle/>
         </RMDiv5>
         <RMDiv6>
-          <RoadMapTitle>Q4 2021</RoadMapTitle>
+          <RoadMapTitle>Q3 2021</RoadMapTitle>
           <RoadMapContent>Launch DUET’s own swap and lending modules;
             dock dAssets with major global lending and trading protocol;
             expand the issuance to more permissionless chains.</RoadMapContent>
@@ -1104,7 +1101,7 @@ export default function App() {
           <VerticalLine color="yes"/><Circle/>
         </RMDiv5>
         <RMDiv6>
-          <RoadMapTitle>Q2 2022</RoadMapTitle>
+          <RoadMapTitle>Q1 2022</RoadMapTitle>
           <RoadMapContent>Covering more than 500 core assets achieving
             the goal of ‘global coverage in-one-wallet’</RoadMapContent>
         </RMDiv6>
