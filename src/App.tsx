@@ -22,10 +22,10 @@ const Body = styled.div`
 `
 
 const DuetLogo = styled.div`
-  padding-top: 40px;
+  /* padding-top: 40px; */
   padding-bottom: 120px;
   padding-right: 40px;
-
+  /* background-color: #09a750; */
   @media (max-width: 950px) {
     padding-right: 0px;
     padding-bottom: 30px;
@@ -609,6 +609,26 @@ const DivWidth = styled.div`
   padding-right: 30px;
 `
 
+const DivMenu = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  /* background-color: #bd1c44; */
+`
+
+const Menu = styled.div`
+  /* display: inline-block; */
+  line-height: 35px;
+  font-size: 14px;
+  font-family: poppinsMedium;
+  font-weight: 600;
+  color: #FFFFFF;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-right: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* background-color: #5840c2; */
+`
 
 function App() {
 
@@ -616,8 +636,8 @@ function App() {
 
   return (
     <Body>
+      <DivMenu><Menu>White Paper</Menu></DivMenu>
       <DuetLogo><img src={logo} alt="logo" /></DuetLogo>
-
       <DuetIntro>
         <Mesh><img width="90%" src={mesh} alt="mesh" /></Mesh>
         <Brand>A Multi-chain Synthetic Asset Protocol</Brand>
