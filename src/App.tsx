@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import logo from './assets/svg/logo.svg';
+import logoMobile from './assets/svg/logo-mobile.svg';
+import brand from './assets/svg/brand.svg';
 import mesh from './assets/images/mesh-png.png';
 // import mesh from './assets/svg/mesh.svg';
 import icon1 from './assets/svg/icon-1.svg';
@@ -12,36 +14,62 @@ import medium from './assets/images/medium.png';
 import telegram from './assets/images/telegram.png';
 import weibo from './assets/images/weibo.png';
 import React, { useState } from 'react';
+import Wave from './Wave/Wave';
 
+// const Body = styled.div`
+//   align-items: center;
+//   text-align: center;
+//   /* background-color: #0D011F; */
+//   /* width: 100%; */
+// `
 
 const Body = styled.div`
-  align-items: center;
   text-align: center;
-  background-color: #0D011F;
-  /* width: 100%; */
+  /* background-color: #616857; */
+  max-width: 1280px;
+  margin: 0 auto;
+  font-size: 0;
+
+  @media (max-width: 1300px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (max-width: 750px) {
+    padding-left: .4rem;
+    padding-right: .4rem;
+  }
 `
 
-const DuetLogo = styled.div`
-  /* padding-top: 40px; */
-  padding-bottom: 120px;
-  padding-right: 40px;
-  /* background-color: #09a750; */
-  @media (max-width: 950px) {
-    padding-right: 0px;
-    padding-bottom: 30px;
-    transform: scale(0.85);
-  }
-  
-`
+// const DuetLogo = styled.div`
+//   /* padding-top: 40px; */
+//   padding-bottom: 120px;
+//   padding-right: 40px;
+//   /* background-color: #09a750; */
+//   @media (max-width: 950px) {
+//     padding-right: 0px;
+//     padding-bottom: 30px;
+//     transform: scale(0.85);
+//   }
+// `
+
+// const DuetIntro = styled.div`
+//   position: relative;
+//   height: 570px;
+
+//   @media (max-width: 950px) {
+//     height: 510px;
+//     overflow: hidden;
+//     /* background-color: #87da3a; */
+//   }
+// `
 
 const DuetIntro = styled.div`
   position: relative;
-  height: 570px;
+  font-size: 0;
 
-  @media (max-width: 950px) {
-    height: 510px;
-    overflow: hidden;
-    /* background-color: #87da3a; */
+  @media (max-width: 750px) {
+    box-sizing: border-box;
   }
 `
 
@@ -57,40 +85,50 @@ const Mesh = styled.div`
   }
 `
 
+// const Brand = styled.div`
+//   color: #FFFFFF;
+//   font-size: 50px;
+//   font-family: samsung;
+//   position: absolute;
+//   padding-top: 11%;
+//   z-index: 2;
+//   width: 100%;
+
+//   @media (max-width: 950px) {
+//     font-size: 25px;
+//     padding-top: 42%;
+//     padding-left: 45px;
+//     width: 80%;
+//   }
+// `
+
 const Brand = styled.div`
-  color: #FFFFFF;
-  font-size: 50px;
-  font-family: samsung;
-  position: absolute;
-  padding-top: 11%;
-  z-index: 2;
-  width: 100%;
+  img {
+    height: 80px;
 
-  @media (max-width: 950px) {
-    font-size: 25px;
-    padding-top: 42%;
-    padding-left: 45px;
-    width: 80%;
+    @media (max-width: 750px) {
+      height: .76rem;
+    }
   }
 `
 
-const SubTitle = styled.div`
-  color: #FFFFFF;
-  opacity: 0.59;
-  font-size: 20px;
-  font-family: poppinsLight;
-  position: absolute;
-  padding-top: 15.3%;
-  width: 100%;
-  z-index: 2;
+// const SubTitle = styled.div`
+//   color: #FFFFFF;
+//   opacity: 0.59;
+//   font-size: 20px;
+//   font-family: poppinsLight;
+//   position: absolute;
+//   padding-top: 15.3%;
+//   width: 100%;
+//   z-index: 2;
 
-  @media (max-width: 950px) {
-    font-size: 15px;
-    padding-top: 61%;
-    padding-left: 45px;
-    width: 80%;
-  }
-`
+//   @media (max-width: 950px) {
+//     font-size: 15px;
+//     padding-top: 61%;
+//     padding-left: 45px;
+//     width: 80%;
+//   }
+// `
 
 const IconList = styled.div`
   display: flex;
@@ -630,21 +668,123 @@ const Menu = styled.div`
   /* background-color: #5840c2; */
 `
 
+const HeaderView = styled.header`
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-size: 0;
+
+  @media (max-width: 750px) {
+    justify-content: center;
+    height: auto;
+    padding-top: 1.43rem;
+  }
+`
+
+const DuetLogo = styled.img`
+  height: 32px;
+  cursor: pointer;
+
+  @media (max-width: 750px) {
+    display: none;
+  }
+`
+
+const DuetLogoMobile = styled.img`
+  display: none;
+
+  @media (max-width: 750px) {
+    display: inline-block;
+    height: 1.8rem;
+  }
+`
+
+const Space = styled.div<{ width?: number, height?: number, mWidth?: number, mHeight?: number }>`
+  width: ${({width}) => (width ? width + 'px' : '0px')};
+  height: ${({height}) => (height ? height + 'px' : '0px')};
+
+  @media (max-width: 750px) {
+    width: ${({mWidth}) => (mWidth ? mWidth + 'rem' : '0px')};
+    height: ${({mHeight}) => (mHeight ? mHeight + 'rem' : '0px')};
+  }
+`
+
+const WhitePaper = styled.button`
+  margin-top: 40px;
+  box-sizing: border-box;
+  padding: 0 62px;
+  height: 60px;
+  background-color: transparent;
+  border: 2px solid #FFFFFF;
+  color: white;
+  font-size: 18px;
+  font-family: poppinsMedium;
+  transition: background-color .3s, transform .3s;
+
+  :hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    background-color: #fff;
+    color: #0E1124;
+  }
+
+  @media (max-width: 750px) {
+    margin-top: .6rem;
+    height: .8rem;
+    padding: 0 .6rem;
+    font-size: .3rem;
+  }
+`
+
+const SubTitle = styled.div`
+  margin-top: 20px;
+  color: #FFFFFF;
+  opacity: 0.6;
+  font-size: 32px;
+  line-height: 48px;
+  font-family: tekoLight;
+  font-weight: 300;
+  letter-spacing: 1.45px;
+
+  @media (max-width: 750px) {
+    margin-top: .3rem;
+    font-size: .36rem;
+    line-height: .48rem;
+    letter-spacing: 0;
+  }
+`
+
 function App() {
 
   const [email, setEmail] = useState('');
 
   return (
     <Body>
-      <DivMenu><Menu>White Paper</Menu></DivMenu>
+      
+      {/* <DivMenu><Menu>White Paper</Menu></DivMenu>
       <DuetLogo><img src={logo} alt="logo" /></DuetLogo>
       <DuetIntro>
         <Mesh><img width="90%" src={mesh} alt="mesh" /></Mesh>
         <Brand>A Multi-chain Synthetic Asset Protocol</Brand>
         <SubTitle>Duet enables on/off-ramp between traditional real assets 
         and high-growth crypto assets</SubTitle>
-      </DuetIntro>
+      </DuetIntro> */}
 
+      <Wave />
+
+      <HeaderView>
+        <DuetLogo src={logo} alt="logo"/>
+        <DuetLogoMobile src={logoMobile} alt="logo"/>
+      </HeaderView>
+
+      <Space height={212} mHeight={1.6}/>
+      <DuetIntro>
+        <Brand><img src={brand} alt="brand"/></Brand>
+        <SubTitle>A Parallel Universe Which Turns Flat Assets Into Sharp Assets</SubTitle>
+        <WhitePaper onClick={openWhitePaper}>White Paper</WhitePaper>
+      </DuetIntro>
+      
+      <Space height={60} mHeight={0.6}/>
       <CenterTitle>
         <CTBigText>Overview</CTBigText>
         <CTSmallText>Overview</CTSmallText>
@@ -912,6 +1052,10 @@ function checkEmail(email: string) {
   } else {
     return true;
   }
+}
+
+function openWhitePaper() {
+  window.open('https://duet.finance/doc/Duet-Protocol-White-Paper.pdf');
 }
 
 //----------------------------------------------------------------
