@@ -653,20 +653,42 @@ const DivMenu = styled.div`
   /* background-color: #bd1c44; */
 `
 
-const Menu = styled.div`
-  /* display: inline-block; */
-  line-height: 35px;
+const MenuList = styled.nav`
+  margin-left: auto;
+  /* background-color: #bd1c44; */
+  @media (max-width: 750px) {
+    display: none;
+  }
+`
+
+const Menu = styled.div<{ left?: number }>`
+  display: inline-block;
+  margin-left: ${({left}) => (left ? left + 'px' : '40px')};
+  line-height: 30px;
   font-size: 14px;
   font-family: poppinsMedium;
   font-weight: 600;
   color: #FFFFFF;
   cursor: pointer;
-  margin-top: 20px;
-  margin-right: 60px;
   padding-left: 10px;
   padding-right: 10px;
-  /* background-color: #5840c2; */
+  /* background-color: #0bbe74; */
 `
+
+// const Menu = styled.div`
+//   /* display: inline-block; */
+//   line-height: 35px;
+//   font-size: 14px;
+//   font-family: poppinsMedium;
+//   font-weight: 600;
+//   color: #FFFFFF;
+//   cursor: pointer;
+//   margin-top: 20px;
+//   margin-right: 60px;
+//   padding-left: 10px;
+//   padding-right: 10px;
+//   /* background-color: #5840c2; */
+// `
 
 const HeaderView = styled.header`
   height: 80px;
@@ -700,12 +722,12 @@ const DuetLogoMobile = styled.img`
 `
 
 const Space = styled.div<{ width?: number, height?: number, mWidth?: number, mHeight?: number }>`
-  width: ${({width}) => (width ? width + 'px' : '0px')};
-  height: ${({height}) => (height ? height + 'px' : '0px')};
+  width: ${({ width }) => (width ? width + 'px' : '0px')};
+  height: ${({ height }) => (height ? height + 'px' : '0px')};
 
   @media (max-width: 750px) {
-    width: ${({mWidth}) => (mWidth ? mWidth + 'rem' : '0px')};
-    height: ${({mHeight}) => (mHeight ? mHeight + 'rem' : '0px')};
+    width: ${({ mWidth }) => (mWidth ? mWidth + 'rem' : '0px')};
+    height: ${({ mHeight }) => (mHeight ? mHeight + 'rem' : '0px')};
   }
 `
 
@@ -760,7 +782,7 @@ function App() {
 
   return (
     <Body>
-      
+
       {/* <DivMenu><Menu>White Paper</Menu></DivMenu>
       <DuetLogo><img src={logo} alt="logo" /></DuetLogo>
       <DuetIntro>
@@ -771,20 +793,22 @@ function App() {
       </DuetIntro> */}
 
       <Wave />
-
       <HeaderView>
-        <DuetLogo src={logo} alt="logo"/>
-        <DuetLogoMobile src={logoMobile} alt="logo"/>
+        <DuetLogo src={logo} alt="logo" />
+        <DuetLogoMobile src={logoMobile} alt="logo" />
+        <MenuList>
+          <Menu onClick={goMedium}>Blog</Menu>
+        </MenuList>
       </HeaderView>
 
-      <Space height={212} mHeight={1.6}/>
+      <Space height={212} mHeight={1.6} />
       <DuetIntro>
-        <Brand><img src={brand} alt="brand"/></Brand>
+        <Brand><img src={brand} alt="brand" /></Brand>
         <SubTitle>A Parallel Universe Which Turns Flat Assets Into Sharp Assets</SubTitle>
         <WhitePaper onClick={openWhitePaper}>White Paper</WhitePaper>
       </DuetIntro>
-      
-      <Space height={60} mHeight={0.6}/>
+
+      <Space height={60} mHeight={0.6} />
       <CenterTitle>
         <CTBigText>Overview</CTBigText>
         <CTSmallText>Overview</CTSmallText>
@@ -799,13 +823,13 @@ function App() {
       <IntroBox>
         <BoxBorder>
           <BoxContentTitle>Seamless Integration</BoxContentTitle>
-          <BoxContent>from BTC to Tesla, Moutai, and VIX, allocate capital to 
+          <BoxContent>from BTC to Tesla, Moutai, and VIX, allocate capital to
             ANY asset with only one crypto wallet</BoxContent>
         </BoxBorder>
         <DivWidth />
         <BoxBorder>
           <BoxContentTitle>Hybrid-collateralization Model</BoxContentTitle>
-          <BoxContent>algo based hyper-collateralization model to generate 
+          <BoxContent>algo based hyper-collateralization model to generate
             on-chain synthetic assets</BoxContent>
         </BoxBorder>
       </IntroBox>
@@ -823,7 +847,7 @@ function App() {
             <SmallCircle />
           </TxtCircle>
 
-          <KFContentSmall>boosting capital utilization while 
+          <KFContentSmall>boosting capital utilization while
             enhancing system robustness</KFContentSmall>
 
           <TxtCircle>
@@ -867,21 +891,21 @@ function App() {
           </TxtCircle>
 
           <KFContentSmall2>to ensure project sustainability</KFContentSmall2>
-          
+
           <TxtCircle>
             <SmallCircle /><ForMobileSmallCircle />
             <KFContent2>Broader collateral acceptance</KFContent2>
           </TxtCircle>
 
-          <KFContentSmall2>including yield-bearing assets 
+          <KFContentSmall2>including yield-bearing assets
             (yToken, cToken, LPToken, etc.)</KFContentSmall2>
-          
+
           <TxtCircle>
             <SmallCircle /><ForMobileSmallCircle />
             <KFContent2>Governed by DAO</KFContent2>
           </TxtCircle>
 
-          <KFContentSmall2>delegate power to the users in a 
+          <KFContentSmall2>delegate power to the users in a
             transparent & censorship-resistance way</KFContentSmall2>
         </KFTxtBorder>
       </KeyFeature>
@@ -917,8 +941,8 @@ function App() {
 
         <ForMobile>
           <RoadMapTitle>Q3 2021</RoadMapTitle>
-          <RoadMapContent>Launch DUET’s own swap and lending modules; 
-            dock dAssets with major global lending and trading protocol; 
+          <RoadMapContent>Launch DUET’s own swap and lending modules;
+          dock dAssets with major global lending and trading protocol;
             expand the issuance to more permissionless chains.</RoadMapContent>
         </ForMobile>
 
@@ -928,14 +952,14 @@ function App() {
         </RMDiv3>
         <RMDiv3>
           <RoadMapTitle>Q4 2021</RoadMapTitle>
-          <RoadMapContent>Atomic cross-chain transactions of dAssets based 
-            on ZK solution; community-based asset management platform based 
+          <RoadMapContent>Atomic cross-chain transactions of dAssets based
+          on ZK solution; community-based asset management platform based
             on dAsset development</RoadMapContent>
         </RMDiv3>
 
         <ForMobile>
           <RoadMapTitle>Q1 2022</RoadMapTitle>
-          <RoadMapContent>Covering more than 500 core assets achieving 
+          <RoadMapContent>Covering more than 500 core assets achieving
             the goal of ‘global coverage in-one-wallet’</RoadMapContent>
         </ForMobile>
 
@@ -945,8 +969,8 @@ function App() {
         </RMDiv4>
         <RMDiv4>
           <RoadMapTitle>Q2 2022</RoadMapTitle>
-          <RoadMapContent>First "Chord Chapter"-accept off-chain assets as 
-            collateral. Migrate data server from traditional IDC to IPFS 
+          <RoadMapContent>First "Chord Chapter"-accept off-chain assets as
+          collateral. Migrate data server from traditional IDC to IPFS
             network to realize fully decentralization.</RoadMapContent>
         </RMDiv4>
       </RoadMap>
@@ -969,8 +993,8 @@ function App() {
         </RMDiv5>
         <RMDiv6>
           <RoadMapTitle>Q3 2021</RoadMapTitle>
-          <RoadMapContent>Launch DUET’s own swap and lending modules; 
-            dock dAssets with major global lending and trading protocol; 
+          <RoadMapContent>Launch DUET’s own swap and lending modules;
+          dock dAssets with major global lending and trading protocol;
             expand the issuance to more permissionless chains.</RoadMapContent>
         </RMDiv6>
 
@@ -980,7 +1004,7 @@ function App() {
         </RMDiv5>
         <RMDiv6>
           <RoadMapTitle>Q1 2022</RoadMapTitle>
-          <RoadMapContent>Covering more than 500 core assets achieving 
+          <RoadMapContent>Covering more than 500 core assets achieving
             the goal of ‘global coverage in-one-wallet’</RoadMapContent>
         </RMDiv6>
       </RoadMap>
@@ -991,7 +1015,7 @@ function App() {
       </CenterTitle>
 
       <Submit>
-        <SubmitInput onChange={event => setEmail(event.target.value)} 
+        <SubmitInput onChange={event => setEmail(event.target.value)}
           placeholder="Enter Your Email" type="text" />
         <SubmitButton onClick={() => submit(email)}>Submit</SubmitButton>
       </Submit>
@@ -1045,7 +1069,7 @@ function checkEmail(email: string) {
   // Call the regular verification test() function
   const isok = reg.test(email);
 
-  if(!isok) {
+  if (!isok) {
     alert("Please enter a valid email.");
     // document.getElementById("emailname").focus();
     return false;
