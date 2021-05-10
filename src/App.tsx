@@ -823,7 +823,7 @@ function App() {
       <IntroBox>
         <BoxBorder>
           <BoxContentTitle>Seamless Integration</BoxContentTitle>
-          <BoxContent>from BTC to Tesla, Moutai, and VIX, allocate capital to
+          <BoxContent>from BTC to Tesla, Maotai, and VIX, allocate capital to
             ANY asset with only one crypto wallet</BoxContent>
         </BoxBorder>
         <DivWidth />
