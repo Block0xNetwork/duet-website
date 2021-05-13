@@ -6,14 +6,17 @@ import icon1 from './assets/svg/icon-1.svg';
 import icon2 from './assets/svg/icon-2.svg';
 import icon3 from './assets/svg/icon-3.svg';
 
-import omni from './assets/images/omni.png';
-import bitcoin from './assets/images/bitcoin.png';
-import dao from './assets/images/dao.png';
-import matrix from './assets/images/matrix.png';
-import ibm from './assets/images/ibm.png';
-import binance from './assets/images/binance.png';
-import microsoft from './assets/images/microsoft.png';
-import ifinance from './assets/images/ifinance.png';
+import investor1  from './assets/images/investor1.png';
+import investor2  from './assets/images/investor2.png';
+import investor3  from './assets/images/investor3.png';
+import investor4  from './assets/images/investor4.png';
+import investor5  from './assets/images/investor5.png';
+import investor6  from './assets/images/investor6.png';
+import investor7  from './assets/images/investor7.png';
+import investor8  from './assets/images/investor8.png';
+import investor9  from './assets/images/investor9.png';
+import investor10  from './assets/images/investor10.png';
+import investor11  from './assets/images/investor11.png';
 
 import news1 from './assets/images/news1.png';
 import news2 from './assets/images/news2.png';
@@ -228,7 +231,7 @@ const FlexLayout = styled.div<{ justify?: any }>`
 
 const PcPartners = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   font-size: 0;
 
@@ -480,7 +483,11 @@ const NewsDate = styled.div`
 `
 
 const KeyFeatureTitle = styled(ContentTitle)`
-  min-height: 0;
+  min-height: 116px;
+
+  @media (max-width: 750px) {
+    min-height: 2rem;
+  }
 `
 
 const KeyFeature = styled.div`
@@ -1108,29 +1115,35 @@ export default function App() {
       </RoadMap>
       <Space height={200} mHeight={1.8}/>
       <ContentTitle>
-        <span>Partner</span>
+        <span>Investors</span>
       </ContentTitle>
 
       <PcPartners>
-        <img width="320px" height="166px" src={omni} alt=""/>
-        <img width="320px" height="166px" src={bitcoin} alt=""/>
-        <img width="320px" height="166px" src={dao} alt=""/>
-        <img width="320px" height="166px" src={matrix} alt=""/>
-        <img width="320px" height="166px" src={ibm} alt=""/>
-        <img width="320px" height="166px" src={binance} alt=""/>
-        <img width="320px" height="166px" src={microsoft} alt=""/>
-        <img width="320px" height="166px" src={ifinance} alt=""/>
+        <img width="320px" height="166px" src={investor1} alt=""/>
+        <img width="320px" height="166px" src={investor2} alt=""/>
+        <img width="320px" height="166px" src={investor3} alt=""/>
+        <img width="320px" height="166px" src={investor4} alt=""/>
+        <img width="320px" height="166px" src={investor5} alt=""/>
+        <img width="320px" height="166px" src={investor6} alt=""/>
+        <img width="320px" height="166px" src={investor7} alt=""/>
+        <img width="320px" height="166px" src={investor8} alt=""/>
+        <img width="320px" height="166px" src={investor9} alt=""/>
+        <img width="320px" height="166px" src={investor10} alt=""/>
+        <img width="320px" height="166px" src={investor11} alt=""/>
       </PcPartners>
 
       <MobilePartners>
-        <img src={omni} alt=""/>
-        <img src={bitcoin} alt=""/>
-        <img src={dao} alt=""/>
-        <img src={matrix} alt=""/>
-        <img src={ibm} alt=""/>
-        <img src={binance} alt=""/>
-        <img src={microsoft} alt=""/>
-        <img src={ifinance} alt=""/>
+        <img src={investor1} alt=""/>
+        <img src={investor2} alt=""/>
+        <img src={investor3} alt=""/>
+        <img src={investor4} alt=""/>
+        <img src={investor5} alt=""/>
+        <img src={investor6} alt=""/>
+        <img src={investor7} alt=""/>
+        <img src={investor8} alt=""/>
+        <img src={investor9} alt=""/>
+        <img src={investor10} alt=""/>
+        <img src={investor11} alt=""/>
       </MobilePartners>
 
       <Space height={160} mHeight={1.8}/>
