@@ -333,6 +333,7 @@ const ContentTitle = styled.div`
 
   span {
     background: linear-gradient(to right, #5574FF, #AF0BD9);
+    background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
   }
@@ -722,6 +723,7 @@ const RoadMapTitle = styled.div`
   font-weight: 500;
   /* background: linear-gradient(to right, #5574FF, #AF0BD9); */
   background: linear-gradient(270deg, #AF0BD9 0%, #5574FF 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   padding-bottom: 20px;
@@ -878,8 +880,10 @@ export default function App() {
         <DuetLogo src={logo} alt="logo"/>
         <DuetLogoMobile src={logoMobile} alt="logo"/>
         <MenuList>
-          <Menu>DOC</Menu>
-          <Menu onClick={goEthWebApp}>WEBAPP</Menu>
+          <Menu onClick={goMedium}>Blog</Menu>
+
+          {/* <Menu>DOC</Menu>
+          <Menu onClick={goEthWebApp}>WEBAPP</Menu> */}
 
           {/* <WebApp>
             <Menu>WEBAPP</Menu>
@@ -896,11 +900,9 @@ export default function App() {
 
       <Space height={212} mHeight={1.6}/>
       <DuetIntro>
-        {/* <Mesh><img width="90%" src={mesh} alt="mesh" /></Mesh> */}
         <Brand><img src={brand} alt="brand"/></Brand>
-        {/* <Brand>A Multi-chain Synthetic Asset Protocol</Brand> */}
         <SubTitle>A Parallel Universe Which Turns Flat Assets Into Sharp Assets</SubTitle>
-        <WhitePaper onClick={goEthWebApp}>Prelude Mining</WhitePaper>
+        <WhitePaper onClick={openWhitePaper}>White Paper</WhitePaper>
       </DuetIntro>
 
       <Space height={460} mHeight={3.06}/>
@@ -938,7 +940,7 @@ export default function App() {
       <FlexLayout>
         <BoxBorder>
           <BoxTitle>Seamless Integration</BoxTitle>
-          <BoxContent>from BTC to Tesla, Moutai, and VIX, allocate capital to
+          <BoxContent>from BTC to Tesla, Maotai, and VIX, allocate capital to
             ANY asset with only one crypto wallet</BoxContent>
         </BoxBorder>
 
@@ -1146,12 +1148,12 @@ export default function App() {
         <img src={investor11} alt=""/>
       </MobilePartners>
 
-      <Space height={160} mHeight={1.8}/>
-      <ContentTitle>
+      {/* <Space height={160} mHeight={1.8}/> */}
+      {/* <ContentTitle>
         <span>News</span>
-      </ContentTitle>
+      </ContentTitle> */}
 
-      <NewsContainer>
+      {/* <NewsContainer>
         <NewsItem>
           <img src={news1} alt=""/>
           <News>Duet protocol is a synthetic asset protocol that
@@ -1176,7 +1178,7 @@ export default function App() {
             allows traditional assets to migrate to high-growth </News>
           <NewsDate>April 13</NewsDate>
         </NewsItem>
-      </NewsContainer>
+      </NewsContainer> */}
 
       <Space height={200} mHeight={1.8}/>
       <ContentTitleForRU>
@@ -1237,6 +1239,10 @@ function goWeibo() {
 
 function goEthWebApp() {
   window.open('https://eth-duet.on.fleek.co/');
+}
+
+function openWhitePaper() {
+  window.open('https://duet.finance/doc/Duet-Protocol-White-Paper.pdf');
 }
 
 function checkEmail(email: string) {
