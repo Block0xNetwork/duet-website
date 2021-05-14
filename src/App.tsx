@@ -923,7 +923,8 @@ export default function App() {
           <ContentTitle>
             <span>How It Works</span>
           </ContentTitle>
-          <KFimage><img src={howIcon} alt="keyfeature"/></KFimage>
+          {/* <Space height={60} /> */}
+          <KFimage><img width='1280px' height='584px' src={howIcon} alt=""/></KFimage>
         </div>
       </PcOnly>
 
