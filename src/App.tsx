@@ -2,26 +2,37 @@ import styled from 'styled-components'
 import logo from './assets/svg/logo.svg';
 import logoMobile from './assets/svg/logo-mobile.svg';
 import brand from './assets/svg/brand.svg';
-import mesh from './assets/images/mesh-png.png';
-// import mesh from './assets/svg/mesh.svg';
 import icon1 from './assets/svg/icon-1.svg';
 import icon2 from './assets/svg/icon-2.svg';
 import icon3 from './assets/svg/icon-3.svg';
+
+import investor1  from './assets/images/investor1.png';
+import investor2  from './assets/images/investor2.png';
+import investor3  from './assets/images/investor3.png';
+import investor4  from './assets/images/investor4.png';
+import investor5  from './assets/images/investor5.png';
+import investor6  from './assets/images/investor6.png';
+import investor7  from './assets/images/investor7.png';
+import investor8  from './assets/images/investor8.png';
+import investor9  from './assets/images/investor9.png';
+import investor10  from './assets/images/investor10.png';
+import investor11  from './assets/images/investor11.png';
+
+import news1 from './assets/images/news1.png';
+import news2 from './assets/images/news2.png';
+import news3 from './assets/images/news3.png';
+import news4 from './assets/images/news4.png';
+
 import keyfeature from './assets/images/keyfeature.png';
 import fb from './assets/images/fb.png';
 import twitter from './assets/images/twitter.png';
 import medium from './assets/images/medium.png';
 import telegram from './assets/images/telegram.png';
 import weibo from './assets/images/weibo.png';
-import React, { useState } from 'react';
-import Wave from './Wave/Wave';
+import React, {useState} from 'react';
+import howIcon from './assets/images/how-it-work.png';
 
-// const Body = styled.div`
-//   align-items: center;
-//   text-align: center;
-//   /* background-color: #0D011F; */
-//   /* width: 100%; */
-// `
+import Wave from './Wave/Wave';
 
 const Body = styled.div`
   text-align: center;
@@ -40,655 +51,6 @@ const Body = styled.div`
     padding-right: .4rem;
   }
 `
-
-// const DuetLogo = styled.div`
-//   /* padding-top: 40px; */
-//   padding-bottom: 120px;
-//   padding-right: 40px;
-//   /* background-color: #09a750; */
-//   @media (max-width: 950px) {
-//     padding-right: 0px;
-//     padding-bottom: 30px;
-//     transform: scale(0.85);
-//   }
-// `
-
-// const DuetIntro = styled.div`
-//   position: relative;
-//   height: 570px;
-
-//   @media (max-width: 950px) {
-//     height: 510px;
-//     overflow: hidden;
-//     /* background-color: #87da3a; */
-//   }
-// `
-
-const DuetIntro = styled.div`
-  position: relative;
-  font-size: 0;
-
-  @media (max-width: 750px) {
-    box-sizing: border-box;
-  }
-`
-
-const Mesh = styled.div`
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-
-  @media (max-width: 950px) {
-    transform: scale(3);
-    padding-left: 10px;
-    padding-top: 80px;
-  }
-`
-
-// const Brand = styled.div`
-//   color: #FFFFFF;
-//   font-size: 50px;
-//   font-family: samsung;
-//   position: absolute;
-//   padding-top: 11%;
-//   z-index: 2;
-//   width: 100%;
-
-//   @media (max-width: 950px) {
-//     font-size: 25px;
-//     padding-top: 42%;
-//     padding-left: 45px;
-//     width: 80%;
-//   }
-// `
-
-const Brand = styled.div`
-  img {
-    height: 80px;
-
-    @media (max-width: 750px) {
-      height: .76rem;
-    }
-  }
-`
-
-// const SubTitle = styled.div`
-//   color: #FFFFFF;
-//   opacity: 0.59;
-//   font-size: 20px;
-//   font-family: poppinsLight;
-//   position: absolute;
-//   padding-top: 15.3%;
-//   width: 100%;
-//   z-index: 2;
-
-//   @media (max-width: 950px) {
-//     font-size: 15px;
-//     padding-top: 61%;
-//     padding-left: 45px;
-//     width: 80%;
-//   }
-// `
-
-const IconList = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-
-  @media (max-width: 950px) {
-    flex-flow: column;
-  }
-`
-
-const Icon = styled.div`
-  /* padding-left: 250px; */
-`
-
-const Icon2 = styled.div`
-  @media (max-width: 950px) {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-`
-
-const IconTitle = styled.div`
-  color: #FFFFFF;
-  font-size: 28px;
-  font-family: poppinsRegular;
-  padding-top: 20px;
-
-  @media (max-width: 950px) {
-    font-size: 24px;
-  }
-`
-
-const IntroBox = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding-top: 100px;
-
-  @media (max-width: 950px) {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    margin-left: -5px;
-  }
-`
-
-const BoxBorder = styled.div`
-  border-width: 1px;
-  border-radius: 2px;
-  border-style: solid;
-  border-color: #191b19;
-  width: 450px;
-  height: 210px;
-  padding-left: 20px;
-
-  @media (max-width: 950px) {
-    border-width: 0px;
-  }
-`
-
-const BoxContentTitle = styled.div`
-  font-size: 24px;
-  font-family: poppinsMedium;
-  background: linear-gradient(to right, #5574FF, #AF0BD9);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  padding-top: 40px;
-  padding-left: 40px;
-  padding-right: 40px;
-  text-align: left;
-`
-
-const BoxContent = styled.div`
-  color: #FFFFFF;
-  font-size: 18px;
-  font-family: poppinsLight;
-  opacity: 0.59;
-  padding-top: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 40px;
-  text-align: left;
-`
-
-const CenterTitle = styled.div`
-  position: relative;
-  height: 250px;
-  line-height: 126px;
-  margin-top: 15%;
-
-  @media (max-width: 950px) {
-    margin-top: 70px;
-    margin-bottom: 170px;
-    height: 0px;
-    line-height: 30px;
-    /* background-color: #87da3a; */
-  }
-`
-
-const CTBigText = styled.div`
-  position: absolute;
-  opacity: 0.06;
-  color: #5771FE;
-  font-size: 100px;
-  font-family: samsung;
-  z-index: 1;
-  width: 100%;
-  /* background-color: #243a10; */
-
-  @media (max-width: 950px) {
-    font-size: 50px;
-  }
-`
-
-const CTSmallText = styled.div`
-  color: #FFFFFF;
-  font-size: 50px;
-  font-family: samsung;
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-
-  @media (max-width: 950px) {
-    font-size: 30px;
-  }
-`
-
-const KeyFeature = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-`
-
-const KFimage = styled.div`
-  @media (max-width: 950px) {
-    /* transform: scale(0.7); */
-    display: none;
-  }
-`
-
-const TxtCircle = styled.div`
-  display: flex;
-  margin-top: 20px;
-`
-
-const KFTxtBorder = styled.div`
-  display: flex;
-  flex-flow: column;
-  justify-content: space-around;
-`
-
-const KFContent = styled.div`
-  color: #FFFFFF;
-  font-size: 18px;
-  font-family: poppinsRegular;
-  font-weight: bold;
-  text-align: right;
-  width: 335px;
-
-  @media (max-width: 950px) {
-    text-align: left;
-    width: 260px;
-  }
-`
-
-const KFContentSmall = styled.div`
-  color: #FFFFFF;
-  font-size: 14px;
-  font-family: poppinsLight;
-  opacity: 0.5;
-  text-align: right;
-  width: 280px;
-  margin-left: 55px;
-
-  @media (max-width: 950px) {
-    margin-left: 45px;
-    margin-top: 5px;
-    text-align: left;
-    width: 250px;
-  }
-`
-
-const KFContent2 = styled.div`
-  color: #FFFFFF;
-  font-size: 18px;
-  font-family: poppinsRegular;
-  font-weight: bold;
-  text-align: left;
-  width: 280px;
-
-  @media (max-width: 950px) {
-    text-align: left;
-    width: 260px;
-  }
-`
-
-const KFContentSmall2 = styled.div`
-  color: #FFFFFF;
-  font-size: 14px;
-  font-family: poppinsLight;
-  opacity: 0.5;
-  text-align: left;
-  width: 280px;
-  margin-left: 50px;
-
-  @media (max-width: 950px) {
-    margin-left: 45px;
-    margin-top: 5px;
-    text-align: left;
-    width: 250px;
-  }
-`
-
-const RoadMap = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  @media (max-width: 950px) {
-    flex-flow: column;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-`
-
-const RMDiv1 = styled.div`
-  padding-left: 20px;
-  padding-top: 210px;
-
-  @media (max-width: 950px) {
-    padding-left: 0px;
-    padding-top: 0px;
-  }
-`
-
-const RMDiv2 = styled.div`
-  padding-left: 20px;
-
-  @media (max-width: 950px) {
-    padding-left: 0px;
-    padding-top: 30px;
-  }
-`
-
-const RMDiv3 = styled.div`
-  padding-left: 20px;
-  padding-top: 70px;
-
-  @media (max-width: 950px) {
-    padding-left: 0px;
-    padding-top: 30px;
-  }
-`
-
-const RMDiv4 = styled.div`
-  padding-left: 20px;
-  padding-top: 10px;
-
-  @media (max-width: 950px) {
-    padding-left: 0px;
-    padding-top: 30px;
-  }
-`
-
-const RMDiv5 = styled.div`
-  padding-left: 20px;
-
-  @media (max-width: 950px) {
-    padding-left: 0px;
-  }
-`
-
-const RMDiv6 = styled.div`
-  padding-left: 20px;
-  padding-top: 190px;
-
-  @media (max-width: 950px) {
-    display: none;
-  }
-`
-
-const ForMobile = styled.div`
-  display: none;
-  @media (max-width: 950px) {
-    display: block;
-    padding-top: 50px;
-  }
-`
-
-const Line = styled.div`
-  opacity: 0.6;
-  background: linear-gradient(to right, black, #9A24E2, #675FF7, black);
-  // background: linear-gradient(to right, #AF0BD9, #9A24E2, #675FF7, #5574FF);
-  height: 1px;
-
-  @media (max-width: 950px) {
-    /* opacity: 0; */
-    display: none;
-  }
-`
-
-const Circle = styled.div`
-  opacity: 0.6;
-  width: 15px;
-  height: 15px;
-  background-color: #8C0AB2;
-  border-radius: 50%;
-
-  @media (max-width: 950px) {
-    /* opacity: 0; */
-    display: none;
-  }
-`
-
-const SmallCircle = styled.div`
-  margin-top: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: linear-gradient(270deg, #AF0BD9 0%, #5574FF 100%);
-
-  @media (max-width: 950px) {
-    display: none;
-  }
-`
-
-const ForMobileSmallCircle = styled(SmallCircle)`
-  display: none;
-  @media (max-width: 950px) {
-    display: block;
-    margin-left: 15px;
-  }
-`
-const VerticalLine = styled.div`
-  opacity: 0.6;
-  background: linear-gradient(#AF0BD9, #5574FF);
-  height: 200px;
-  width: 1px;
-  margin-left: 7px;
-
-  @media (max-width: 950px) {
-    /* opacity: 0;
-    height: 0px; */
-    display: none;
-  }
-`
-
-const VL410 = styled.div`
-  opacity: 0.6;
-  background: linear-gradient(#AF0BD9, #5574FF);
-  height: 410px;
-  width: 1px;
-  margin-left: 7px;
-
-  @media (max-width: 950px) {
-    /* opacity: 0;
-    height: 0px; */
-    display: none;
-  }
-`
-
-const VL340 = styled.div`
-  opacity: 0.6;
-  background: linear-gradient(#AF0BD9, #5574FF);
-  height: 340px;
-  width: 1px;
-  margin-left: 7px;
-
-  @media (max-width: 950px) {
-    /* opacity: 0;
-    height: 0px; */
-    display: none;
-  }
-`
-
-const VL400 = styled.div`
-  opacity: 0.6;
-  background: linear-gradient(#AF0BD9, #5574FF);
-  height: 400px;
-  width: 1px;
-  margin-left: 7px;
-
-  @media (max-width: 950px) {
-    display: none;
-  }
-`
-
-const VerticalLine2 = styled.div`
-  opacity: 0.6;
-  background: linear-gradient(#5574FF, #AF0BD9);
-  height: 200px;
-  width: 1px;
-  margin-left: 7px;
-
-  @media (max-width: 950px) {
-    display: none;
-  }
-`
-
-const RoadMapTitle = styled.div`
-  font-size: 24px;
-  font-family: poppinsRegular;
-  /* background: linear-gradient(to right, #5574FF, #AF0BD9); */
-  background: linear-gradient(270deg, #AF0BD9 0%, #5574FF 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  padding-bottom: 20px;
-  text-align: left;
-
-  @media (max-width: 950px) {
-    padding-left: 25px;
-  }
-`
-
-const RoadMapContent = styled.div`
-  color: #FFFFFF;
-  font-size: 16px;
-  font-family: poppinsLight;
-  opacity: 0.59;
-  text-align: left;
-  width: 220px;
-
-  @media (max-width: 950px) {
-    width: 260px;
-    padding-left: 25px;
-  }
-`
-
-const Submit = styled.div`
-  display: flex;
-  justify-content: center;
-
-  @media (max-width: 950px) {
-    flex-flow: column;
-    align-items: center;
-  }
-`
-
-const SubmitInput = styled.input`
-  background-color: #130B1F;
-  width: 440px;
-  height: 50px;
-  outline-style: none;
-  color: white;
-  font-size: 18px;
-  border-radius: 4px;
-  border: none;
-  text-indent: 20px;
-
-  @media (max-width: 950px) {
-    width: 70%;
-  }
-`
-
-const SubmitButton = styled.button`
-  width: 120px;
-  margin-left: 20px;
-  background: linear-gradient(270deg, #AF0BD9 0%, #5574FF 100%);
-  border-radius: 4px;
-  border: none;
-  color: white;
-  font-size: 18px;
-  font-family: poppinsMedium;
-
-  :hover {
-    cursor: pointer;
-    transform: scale(1.05);
-  }
-
-  @media (max-width: 950px) {
-    width: 74%;
-    margin-left: 0px;
-    margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-`
-
-const Media = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
-`
-
-const MediaIcon = styled.div`
-  margin-left: 15px;
-  margin-right: 15px;
-  opacity: 0.6;
-
-  :hover {
-    cursor: pointer;
-    opacity: 1;
-    transform: scale(1.2);
-  }
-`
-
-const Copyright = styled.div`
-  color: #FFFFFF;
-  font-size: 14px;
-  font-family: PingFangSC-Regular;
-  opacity: 0.29;
-  margin-top: 20px;
-  padding-bottom: 40px;
-
-  @media (max-width: 950px) {
-    padding-bottom: 60px;
-  }
-`
-
-const DivWidth = styled.div`
-  padding-left: 30px;
-  padding-right: 30px;
-`
-
-const DivMenu = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  /* background-color: #bd1c44; */
-`
-
-const MenuList = styled.nav`
-  margin-left: auto;
-  /* background-color: #bd1c44; */
-  @media (max-width: 750px) {
-    display: none;
-  }
-`
-
-const Menu = styled.div<{ left?: number }>`
-  display: inline-block;
-  margin-left: ${({left}) => (left ? left + 'px' : '40px')};
-  line-height: 30px;
-  font-size: 14px;
-  font-family: poppinsMedium;
-  font-weight: 600;
-  color: #FFFFFF;
-  cursor: pointer;
-  padding-left: 10px;
-  padding-right: 10px;
-  /* background-color: #0bbe74; */
-`
-
-// const Menu = styled.div`
-//   /* display: inline-block; */
-//   line-height: 35px;
-//   font-size: 14px;
-//   font-family: poppinsMedium;
-//   font-weight: 600;
-//   color: #FFFFFF;
-//   cursor: pointer;
-//   margin-top: 20px;
-//   margin-right: 60px;
-//   padding-left: 10px;
-//   padding-right: 10px;
-//   /* background-color: #5840c2; */
-// `
 
 const HeaderView = styled.header`
   height: 80px;
@@ -721,13 +83,111 @@ const DuetLogoMobile = styled.img`
   }
 `
 
-const Space = styled.div<{ width?: number, height?: number, mWidth?: number, mHeight?: number }>`
-  width: ${({ width }) => (width ? width + 'px' : '0px')};
-  height: ${({ height }) => (height ? height + 'px' : '0px')};
+const MenuList = styled.nav`
+  margin-left: auto;
 
   @media (max-width: 750px) {
-    width: ${({ mWidth }) => (mWidth ? mWidth + 'rem' : '0px')};
-    height: ${({ mHeight }) => (mHeight ? mHeight + 'rem' : '0px')};
+    display: none;
+  }
+`
+
+const Menu = styled.div<{ left?: number }>`
+  display: inline-block;
+  margin-left: ${({left}) => (left ? left + 'px' : '40px')};
+  line-height: 30px;
+  font-size: 14px;
+  font-family: poppinsMedium;
+  font-weight: 600;
+  color: #FFFFFF;
+  cursor: pointer;
+`
+
+const WebApp = styled.div`
+  position: relative;
+  display: inline-block;
+`
+
+const AppList = styled.div`
+  position: absolute;
+  z-index: 2;
+  display: none;
+
+  ${WebApp}:hover & {
+    display: block;
+  }
+`
+
+const AppItem = styled.div`
+  /* margin-left: 40px; */
+  width: 70px;
+  line-height: 30px;
+  /* background-color: #4ac212; */
+  font-size: 14px;
+  font-family: poppinsMedium;
+  font-weight: 600;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: opacity .3s;
+
+  /* :hover {
+    transform: scale(1.05);
+  } */
+
+  &:hover {
+    opacity: .6;
+  }
+
+  @media (max-width: 950px) {
+  }
+`
+
+const DuetIntro = styled.div`
+  position: relative;
+  font-size: 0;
+
+  @media (max-width: 750px) {
+    box-sizing: border-box;
+  }
+
+`
+
+// const Mesh = styled.div`
+//   position: absolute;
+//   z-index: 1;
+//   width: 100%;
+
+//   @media (max-width: 950px) {
+//     transform: scale(3);
+//     padding-left: 10px;
+//     padding-top: 80px;
+//   }
+// `
+
+const Brand = styled.div`
+  img {
+    height: 80px;
+
+    @media (max-width: 750px) {
+      height: .76rem;
+    }
+  }
+`
+
+const SubTitle = styled.div`
+  margin-top: 20px;
+  color: #FFFFFF;
+  opacity: 0.6;
+  font-size: 32px;
+  line-height: 48px;
+  font-family: tekoLight;
+  font-weight: 300;
+  letter-spacing: 1.45px;
+
+  @media (max-width: 750px) {
+    margin-top: .3rem;
+    font-size: .36rem;
+    line-height: .48rem;
+    letter-spacing: 0;
   }
 `
 
@@ -758,171 +218,826 @@ const WhitePaper = styled.button`
   }
 `
 
-const SubTitle = styled.div`
-  margin-top: 20px;
-  color: #FFFFFF;
-  opacity: 0.6;
-  font-size: 32px;
-  line-height: 48px;
-  font-family: tekoLight;
-  font-weight: 300;
-  letter-spacing: 1.45px;
+const FlexLayout = styled.div<{ justify?: any }>`
+  display: flex;
+  justify-content: ${({justify}) => (justify ? justify : 'flex-start')};
+  flex-wrap: wrap;
+  font-size: 0;
 
-  @media (max-width: 750px) {
-    margin-top: .3rem;
-    font-size: .36rem;
-    line-height: .48rem;
-    letter-spacing: 0;
+  @media (max-width: 950px) {
+    flex-flow: column;
   }
 `
 
-function App() {
+const PcPartners = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 0;
+
+  @media (max-width: 950px) {
+    display: none;
+  }
+`
+
+const MobilePartners = styled.div`
+  display: none;
+
+  @media (max-width: 950px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: .3rem;
+
+    img {
+      height: 1.66rem;
+    }
+  }
+`
+
+const SplitView = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 750px) {
+    display: block;
+  }
+`
+// const Icon = styled.div`
+//   /* background-color: white; */
+//   /* padding-left: 250px; */
+//   /* width: 320px;
+//   height: 166px; */
+// `
+
+const OverviewItem = styled.div`
+  @media (max-width: 750px) {
+    display: flex;
+    align-items: center;
+    line-height: 1.6rem;
+
+    img {
+      height: 1.6rem;
+      vertical-align: middle;
+    }
+
+    & + & {
+      margin-top: 1rem;
+    }
+  }
+`
+
+const IconTitle = styled.div`
+  color: #FFFFFF;
+  font-size: 28px;
+  font-family: poppinsRegular;
+  padding-top: 20px;
+
+  @media (max-width: 950px) {
+    text-align: left;
+    padding-top: 0;
+    margin-left: .6rem;
+    font-size: .4rem;
+    flex: 1;
+  }
+`
+
+// const IntroBox = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   padding-top: 100px;
+
+//   @media (max-width: 950px) {
+//     padding-top: 60px;
+//     padding-bottom: 60px;
+//     margin-left: -5px;
+//   }
+// `
+
+const BoxBorder = styled.div`
+`
+
+const ContentTitle = styled.div`
+  font-size: 40px;
+  font-weight: 600;
+  font-family: poppinsMedium;
+  text-align: left;
+  max-width: 273px;
+  min-height: 116px;
+
+  @media (max-width: 750px) {
+    font-size: .48rem;
+    line-height: .72rem;
+    min-height: 2rem;
+  }
+
+  span {
+    background: linear-gradient(to right, #5574FF, #AF0BD9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+`
+
+const ContentTitleForRU = styled(ContentTitle)`
+  /* font-size: 40px;
+  font-weight: 600;
+  font-family: poppinsMedium;
+  background: linear-gradient(to right, #5574FF, #AF0BD9);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent; */
+  max-width: initial;
+  text-align: center;
+
+  @media (max-width: 750px) {
+    text-align: left;
+  }
+`
+
+const WhatIsDuet = styled.div`
+  flex: 1;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: poppinsRegular;
+  /* background: green; */
+  max-width: 640px;
+  text-align: left;
+  color: #FFFFFF;
+  margin-left: 20px;
+
+  @media (max-width: 750px) {
+    margin-left: 0;
+    font-size: .3rem;
+    line-height: .48rem;
+    width: auto;
+  }
+`
+
+const BoxTitle = styled.div`
+  text-align: left;
+  width: 500px;
+  height: 45px;
+  font-size: 32px;
+  font-family: poppinsMedium;
+  font-weight: 500;
+  color: #FFFFFF;
+  /* line-height: 48px; */
+
+  @media (max-width: 750px) {
+    width: auto;
+    height: auto;
+    font-size: .4rem;
+    line-height: .6rem;
+  }
+`
+
+const BoxContent = styled.div`
+  margin-top: 16px;
+  width: 500px;
+  //height: 48px;
+  font-size: 16px;
+  font-family: poppinsMedium;
+  font-weight: 500;
+  color: #FFFFFF;
+  opacity: 0.4;
+  text-align: left;
+  @media (max-width: 750px) {
+    margin-top: .2rem;
+    width: auto;
+    height: auto;
+    font-size: .32rem;
+    line-height: .48rem;
+  }
+`
+
+const NewsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 27px;
+
+  @media (max-width: 750px) {
+    display: block;
+    white-space: nowrap;
+    overflow: auto;
+  }
+`
+
+const NewsItem = styled.div`
+
+  img  {
+    width: 300px;
+    height: 180px;
+  }
+  @media (max-width: 750px) {
+    display: inline-block;
+    width: 4rem;
+
+    img  {
+      width: 4rem;
+      height: 2.4rem;
+    }
+
+    & + & {
+      margin-left: .8rem;
+    }
+  }
+`
+
+const News = styled.div`
+  /* background: green; */
+  text-align: left;
+  width: 300px;
+  height: 72px;
+  font-size: 16px;
+  font-family: poppinsMedium;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @media (max-width: 750px) {
+    margin-top: .36rem;
+    margin-bottom: .29rem;
+    width: auto;
+    height: auto;
+    font-size: .28rem;
+    line-height: .42rem;
+    white-space: initial;
+  }
+`
+
+const NewsDate = styled.div`
+  /* background: green; */
+  text-align: left;
+  opacity: 0.59;
+  width: 300px;
+  height: 17px;
+  font-size: 12px;
+  font-family: poppinsRegular;
+  font-weight: 400;
+  color: #FFFFFF;
+
+  @media (max-width: 750px) {
+    font-size: .22rem;
+    line-height: .33rem;
+  }
+`
+
+const KeyFeatureTitle = styled(ContentTitle)`
+  min-height: 116px;
+
+  @media (max-width: 750px) {
+    min-height: 2rem;
+  }
+`
+
+const KeyFeature = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`
+
+const PcOnly = styled.div`
+  @media (max-width: 750px) {
+    display: none;
+  }
+`
+
+const KFimage = styled.div`
+  @media (max-width: 950px) {
+    display: none;
+  }
+`
+
+const TxtCircle = styled.div`
+  display: flex;
+  margin-top: 20px;
+`
+
+const KFTxtBorder = styled.div`
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+`
+
+const KFContent = styled.div<{ align?: string, width?: number }>`
+  color: #FFFFFF;
+  font-size: 18px;
+  font-family: poppinsRegular;
+  font-weight: bold;
+  text-align: ${({align}) => (align ? align : 'right')};
+  width: ${({width}) => (width ? width + 'px' : '335px')};
+  /* text-align: right;
+  width: 335px; */
+
+  @media (max-width: 950px) {
+    margin-top: .8rem;
+    text-align: left;
+    width: auto;
+    font-size: .4rem;
+    line-height: .6rem;
+  }
+`
+
+const KFContentSmall = styled.div<{ align?: string, left?: number }>`
+  color: #FFFFFF;
+  font-size: 14px;
+  font-family: poppinsLight;
+  opacity: 0.5;
+  /* text-align: right; */
+  text-align: ${({align}) => (align ? align : 'right')};
+  width: 280px;
+  margin-left: ${({left}) => (left ? left + 'px' : '55px')};
+  /* margin-left: 55px; */
+
+  @media (max-width: 950px) {
+    margin-left: 0;
+    margin-top: .2rem;
+    text-align: left;
+    width: auto;
+    font-size: .32rem;
+    line-height: .48rem;
+  }
+`
+
+const RoadMap = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 950px) {
+    flex-flow: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  @media (max-width: 750px) {
+    display: block;
+    text-align: left;
+  }
+`
+
+const RMDiv1 = styled.div`
+  padding-left: 20px;
+  padding-top: 210px;
+
+  @media (max-width: 950px) {
+    padding-left: 0;
+    padding-top: 0;
+  }
+`
+
+const RMDiv2 = styled.div`
+  padding-left: 20px;
+
+  @media (max-width: 950px) {
+    padding-left: 0px;
+    padding-top: 30px;
+  }
+
+  @media (max-width: 750px) {
+    padding-top: .8rem ;
+  }
+`
+
+const RMDiv3 = styled.div`
+  padding-left: 20px;
+  padding-top: 70px;
+
+  @media (max-width: 950px) {
+    padding-left: 0px;
+    padding-top: 30px;
+  }
+  @media (max-width: 750px) {
+    padding-top: .8rem;
+  }
+`
+
+const RMDiv4 = styled.div`
+  padding-left: 20px;
+  padding-top: 10px;
+
+  @media (max-width: 950px) {
+    padding-left: 0px;
+    padding-top: 30px;
+  }
+
+  @media (max-width: 750px) {
+    padding-top: .8rem;
+  }
+`
+
+const RMDiv5 = styled.div`
+  padding-left: 20px;
+
+  @media (max-width: 950px) {
+    padding-left: 0px;
+  }
+
+  @media (max-width: 750px) {
+    display: none;
+  }
+`
+
+const RMDiv6 = styled.div`
+  padding-left: 20px;
+  padding-top: 190px;
+
+  @media (max-width: 950px) {
+    display: none;
+  }
+
+  @media (max-width: 750px) {
+    padding-top: .8rem;
+  }
+`
+
+const ForMobile = styled.div`
+  display: none;
+  @media (max-width: 950px) {
+    display: block;
+    padding-top: 50px;
+  }
+
+  @media (max-width: 750px) {
+    display: block;
+    padding-top: .8rem;
+  }
+`
+
+const Line = styled.div`
+  opacity: 0.6;
+  background: linear-gradient(to right, black, #9A24E2, #675FF7, black);
+  // background: linear-gradient(to right, #AF0BD9, #9A24E2, #675FF7, #5574FF);
+  height: 1px;
+
+  @media (max-width: 950px) {
+    /* opacity: 0; */
+    display: none;
+  }
+`
+
+const Circle = styled.div`
+  opacity: 0.6;
+  width: 15px;
+  height: 15px;
+  background-color: #8C0AB2;
+  border-radius: 50%;
+
+  @media (max-width: 950px) {
+    display: none;
+  }
+`
+
+const SmallCircle = styled.div`
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(270deg, #AF0BD9 0%, #5574FF 100%);
+
+  @media (max-width: 950px) {
+    display: none;
+  }
+`
+
+const VerticalLine = styled.div<{ height?: number, color?: string }>`
+  opacity: 0.6;
+  background: ${({color}) => (color === 'yes' ? 'linear-gradient(#5574FF, #AF0BD9)'
+    : 'linear-gradient(#AF0BD9, #5574FF)')};
+
+  height: ${({height}) => (height ? height + 'px' : '200px')};
+  width: 1px;
+  margin-left: 7px;
+
+  @media (max-width: 950px) {
+    display: none;
+  }
+`
+
+const RoadMapTitle = styled.div`
+  font-size: 24px;
+  font-family: poppinsMedium;
+  font-weight: 500;
+  /* background: linear-gradient(to right, #5574FF, #AF0BD9); */
+  background: linear-gradient(270deg, #AF0BD9 0%, #5574FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  padding-bottom: 20px;
+  text-align: left;
+
+  @media (max-width: 950px) {
+    padding-left: 25px;
+  }
+
+  @media (max-width: 750px) {
+    display: inline-block;
+    font-size: .4rem;
+    line-height: .5rem;
+    padding-left: 0;
+    padding-bottom: .2rem;
+  }
+`
+
+const RoadMapContent = styled.div`
+  color: #FFFFFF;
+  font-size: 16px;
+  font-family: poppinsLight;
+  opacity: 0.59;
+  text-align: left;
+  width: 220px;
+
+  @media (max-width: 950px) {
+    width: 260px;
+    padding-left: 25px;
+  }
+
+  @media (max-width: 950px) {
+    max-width: initial;
+    padding-left: 0;
+    width: auto;
+    font-size: .28rem;
+    line-height: .42rem;
+  }
+`
+
+const Submit = styled.div`
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 950px) {
+    align-items: center;
+  }
+`
+
+const SubmitInput = styled.input`
+  background-color: #0E1124;
+  width: 640px;
+  height: 60px;
+  outline-style: none;
+  font-size: 16px;
+  font-family: poppinsRegular;
+  font-weight: 400;
+  color: #FFFFFF;
+  /* line-height: 25px; */
+  /* border-radius: 4px; */
+  border: 1px solid #FFFFFF;
+  text-indent: 20px;
+
+  @media (max-width: 950px) {
+    box-sizing: border-box;
+    width: auto;
+    flex: 1;
+    height: .8rem;
+    font-size: .26rem;
+  }
+`
+
+const SubmitButton = styled.button`
+  width: 180px;
+  height: 64px;
+  background-color: #FFFFFF;
+  /* margin-left: 20px; */
+  /* background: linear-gradient(270deg, #AF0BD9 0%, #5574FF 100%); */
+  /* border-radius: 4px; */
+  border: none;
+  /* border: 1px solid #FFFFFF; */
+  font-size: 18px;
+  font-family: poppinsMedium;
+  font-weight: 500;
+  color: #0E1124;
+
+  :hover {
+    cursor: pointer;
+    /* transform: scale(1.05); */
+  }
+
+  @media (max-width: 950px) {
+    box-sizing: border-box;
+    width: 2rem;
+    height: .8rem;
+    font-size: .26rem;
+  }
+`
+
+const Media = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+
+  @media (max-width: 950px) {
+    margin-bottom: 0;
+  }
+`
+
+const MediaIcon = styled.div`
+  margin-left: 15px;
+  margin-right: 15px;
+  opacity: 0.6;
+
+  :hover {
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1.2);
+  }
+`
+
+const Copyright = styled.div`
+  color: #FFFFFF;
+  font-size: 14px;
+  font-family: PingFangSC-Regular;
+  opacity: 0.29;
+  font-weight: 400;
+  margin-bottom: 40px;
+
+  @media (max-width: 950px) {
+    margin-top: .4rem;
+    padding-bottom: .4rem;
+  }
+`
+
+const Space = styled.div<{ width?: number, height?: number, mWidth?: number, mHeight?: number }>`
+  width: ${({width}) => (width ? width + 'px' : '0px')};
+  height: ${({height}) => (height ? height + 'px' : '0px')};
+
+  @media (max-width: 750px) {
+    width: ${({mWidth}) => (mWidth ? mWidth + 'rem' : '0px')};
+    height: ${({mHeight}) => (mHeight ? mHeight + 'rem' : '0px')};
+  }
+`
+
+export default function App() {
 
   const [email, setEmail] = useState('');
 
   return (
     <Body>
-
-      {/* <DivMenu><Menu>White Paper</Menu></DivMenu>
-      <DuetLogo><img src={logo} alt="logo" /></DuetLogo>
-      <DuetIntro>
-        <Mesh><img width="90%" src={mesh} alt="mesh" /></Mesh>
-        <Brand>A Multi-chain Synthetic Asset Protocol</Brand>
-        <SubTitle>Duet enables on/off-ramp between traditional real assets 
-        and high-growth crypto assets</SubTitle>
-      </DuetIntro> */}
-
-      <Wave />
+      <Wave/>
       <HeaderView>
-        <DuetLogo src={logo} alt="logo" />
-        <DuetLogoMobile src={logoMobile} alt="logo" />
+        <DuetLogo src={logo} alt="logo"/>
+        <DuetLogoMobile src={logoMobile} alt="logo"/>
         <MenuList>
           <Menu onClick={goMedium}>Blog</Menu>
+
+          {/* <Menu>DOC</Menu>
+          <Menu onClick={goEthWebApp}>WEBAPP</Menu> */}
+
+          {/* <WebApp>
+            <Menu>WEBAPP</Menu>
+            <AppList>
+              <ul>
+                <AppItem>ETH</AppItem>
+                <AppItem>BSC</AppItem>
+              </ul>
+            </AppList>
+          </WebApp> */}
+
         </MenuList>
       </HeaderView>
 
-      <Space height={212} mHeight={1.6} />
+      <Space height={212} mHeight={1.6}/>
       <DuetIntro>
-        <Brand><img src={brand} alt="brand" /></Brand>
+        <Brand><img src={brand} alt="brand"/></Brand>
         <SubTitle>A Parallel Universe Which Turns Flat Assets Into Sharp Assets</SubTitle>
         <WhitePaper onClick={openWhitePaper}>White Paper</WhitePaper>
       </DuetIntro>
 
-      <Space height={60} mHeight={0.6} />
-      <CenterTitle>
-        <CTBigText>Overview</CTBigText>
-        <CTSmallText>Overview</CTSmallText>
-      </CenterTitle>
+      <Space height={460} mHeight={3.06}/>
+      <SplitView>
+        <ContentTitle>
+          <span>What is Duet Protocol</span>
+        </ContentTitle>
+        <WhatIsDuet>Duet protocol (Duet) is a Multi-chain synthetic asset protocol
+          that sharpens all assets for use in the blockchain world. A duet in music
+          refers to a piece of music where two people play different parts or melodies.
+          Similarly, Duet protocol allows traders to replicate the real-world tradable
+          assets in a decentralised finance ecosystem. </WhatIsDuet>
+      </SplitView>
 
-      <IconList>
-        <Icon><img src={icon1} alt="icon1" /><IconTitle>Reliability</IconTitle></Icon>
-        <Icon2><img src={icon2} alt="icon2" /><IconTitle>Availability</IconTitle></Icon2>
-        <Icon><img src={icon3} alt="icon3" /><IconTitle>Scalability</IconTitle></Icon>
-      </IconList>
+      <PcOnly>
+        <Space height={200} mHeight={1.8}/>
+        <div>
+          <ContentTitle>
+            <span>How It Works</span>
+          </ContentTitle>
+          {/* <Space height={60} /> */}
+          <KFimage><img width='1280px' height='584px' src={howIcon} alt=""/></KFimage>
+        </div>
+      </PcOnly>
 
-      <IntroBox>
+      <Space height={200} mHeight={1.8}/>
+      <ContentTitle>
+        <span>Overview</span>
+      </ContentTitle>
+      <FlexLayout justify='space-around'>
+        <OverviewItem><img src={icon1} alt=""/><IconTitle>Reliability</IconTitle></OverviewItem>
+        <OverviewItem><img src={icon2} alt=""/><IconTitle>Availability</IconTitle></OverviewItem>
+        <OverviewItem><img src={icon3} alt=""/><IconTitle>Scalability</IconTitle></OverviewItem>
+      </FlexLayout>
+      <Space height={80} mHeight={1.6} />
+      <FlexLayout>
         <BoxBorder>
-          <BoxContentTitle>Seamless Integration</BoxContentTitle>
+          <BoxTitle>Seamless Integration</BoxTitle>
           <BoxContent>from BTC to Tesla, Maotai, and VIX, allocate capital to
             ANY asset with only one crypto wallet</BoxContent>
         </BoxBorder>
-        <DivWidth />
+
+        <Space width={140}/>
+        <Space mHeight={1}/>
         <BoxBorder>
-          <BoxContentTitle>Hybrid-collateralization Model</BoxContentTitle>
+          <BoxTitle>Hybrid-collateralization Model</BoxTitle>
           <BoxContent>algo based hyper-collateralization model to generate
             on-chain synthetic assets</BoxContent>
         </BoxBorder>
-      </IntroBox>
+      </FlexLayout>
 
-      <CenterTitle>
-        <CTBigText>Key Features</CTBigText>
-        <CTSmallText>Key Features</CTSmallText>
-      </CenterTitle>
-
+      <Space height={200} mHeight={1.8}/>
+      <KeyFeatureTitle>
+        <span>Key Features</span>
+      </KeyFeatureTitle>
       <KeyFeature>
         <KFTxtBorder>
           <TxtCircle>
-            <ForMobileSmallCircle />
             <KFContent>Algo based hyper-collateralization model</KFContent>
-            <SmallCircle />
+            <SmallCircle/>
           </TxtCircle>
 
           <KFContentSmall>boosting capital utilization while
             enhancing system robustness</KFContentSmall>
 
           <TxtCircle>
-            <ForMobileSmallCircle />
             <KFContent>Any asset class</KFContent>
-            <SmallCircle />
+            <SmallCircle/>
           </TxtCircle>
 
           <KFContentSmall>can be minted on-chain</KFContentSmall>
 
           <TxtCircle>
-            <ForMobileSmallCircle />
             <KFContent>Collateral earning multiplier</KFContent>
-            <SmallCircle />
+            <SmallCircle/>
           </TxtCircle>
 
           <KFContentSmall>reduce the opportunity cost of user migration</KFContentSmall>
 
           <TxtCircle>
-            <ForMobileSmallCircle />
             <KFContent>DeFi coupling modules</KFContent>
-            <SmallCircle />
+            <SmallCircle/>
           </TxtCircle>
 
           <KFContentSmall>empowering various on-chain protocol combinations</KFContentSmall>
         </KFTxtBorder>
 
-        <KFimage><img src={keyfeature} alt="keyfeature" /></KFimage>
+        <KFimage><img src={keyfeature} alt="keyfeature"/></KFimage>
 
         <KFTxtBorder>
           <TxtCircle>
-            <SmallCircle /><ForMobileSmallCircle />
-            <KFContent2>Music theme NFT</KFContent2>
+            <SmallCircle/>
+            <KFContent align="left" width={280}>Music theme NFT</KFContent>
           </TxtCircle>
 
-          <KFContentSmall2>offering entertaining gamification schemes</KFContentSmall2>
+          <KFContentSmall align="left" left={50}>offering entertaining
+            gamification schemes</KFContentSmall>
 
           <TxtCircle>
-            <SmallCircle /><ForMobileSmallCircle />
-            <KFContent2>Unique token releasing scheme</KFContent2>
+            <SmallCircle/>
+            <KFContent align="left" width={280}>Unique token releasing scheme</KFContent>
           </TxtCircle>
 
-          <KFContentSmall2>to ensure project sustainability</KFContentSmall2>
+          <KFContentSmall align="left" left={50}>to ensure project sustainability</KFContentSmall>
 
           <TxtCircle>
-            <SmallCircle /><ForMobileSmallCircle />
-            <KFContent2>Broader collateral acceptance</KFContent2>
+            <SmallCircle/>
+            <KFContent align="left" width={280}>Broader collateral acceptance</KFContent>
           </TxtCircle>
 
-          <KFContentSmall2>including yield-bearing assets
-            (yToken, cToken, LPToken, etc.)</KFContentSmall2>
+          <KFContentSmall align="left" left={50}>including yield-bearing assets
+            (yToken, cToken, LPToken, etc.)</KFContentSmall>
 
           <TxtCircle>
-            <SmallCircle /><ForMobileSmallCircle />
-            <KFContent2>Governed by DAO</KFContent2>
+            <SmallCircle/>
+            <KFContent align="left" width={280}>Governed by DAO</KFContent>
           </TxtCircle>
 
-          <KFContentSmall2>delegate power to the users in a
-            transparent & censorship-resistance way</KFContentSmall2>
+          <KFContentSmall align="left" left={50}>delegate power to the users in a
+            transparent & censorship-resistance way</KFContentSmall>
         </KFTxtBorder>
       </KeyFeature>
 
-      <CenterTitle>
-        <CTBigText>Road Map</CTBigText>
-        <CTSmallText>Road Map</CTSmallText>
-      </CenterTitle>
-
+      <Space height={200} mHeight={1.8}/>
+      <ContentTitle>
+        <span>Road Map</span>
+      </ContentTitle>
       <RoadMap>
         <RMDiv1>
-          <Circle></Circle>
-          <VerticalLine></VerticalLine>
+          <Circle/><VerticalLine/>
         </RMDiv1>
         <RMDiv1>
           <RoadMapTitle>April 2021</RoadMapTitle>
-          <RoadMapContent>Development and test of Instant DUET/dAsset Minter and cores</RoadMapContent>
+          <RoadMapContent>Development and test of Instant DUET/dAsset  Minter and cores</RoadMapContent>
         </RMDiv1>
 
         <ForMobile>
@@ -931,8 +1046,7 @@ function App() {
         </ForMobile>
 
         <RMDiv2>
-          <Circle></Circle>
-          <VL410></VL410>
+          <Circle/><VerticalLine height={410}/>
         </RMDiv2>
         <RMDiv2>
           <RoadMapTitle>June 2021</RoadMapTitle>
@@ -942,19 +1056,18 @@ function App() {
         <ForMobile>
           <RoadMapTitle>Q3 2021</RoadMapTitle>
           <RoadMapContent>Launch DUET’s own swap and lending modules;
-          dock dAssets with major global lending and trading protocol;
+            dock dAssets with major global lending and trading protocol;
             expand the issuance to more permissionless chains.</RoadMapContent>
         </ForMobile>
 
         <RMDiv3>
-          <Circle></Circle>
-          <VL340></VL340>
+          <Circle/><VerticalLine height={340}/>
         </RMDiv3>
         <RMDiv3>
           <RoadMapTitle>Q4 2021</RoadMapTitle>
           <RoadMapContent>Atomic cross-chain transactions of dAssets based
-          on ZK solution; community-based asset management platform based
-            on dAsset development</RoadMapContent>
+            on ZK solution;community-based asset management platform based
+            on d asset development</RoadMapContent>
         </RMDiv3>
 
         <ForMobile>
@@ -964,13 +1077,12 @@ function App() {
         </ForMobile>
 
         <RMDiv4>
-          <Circle></Circle>
-          <VL400></VL400>
+          <Circle/><VerticalLine height={400}/>
         </RMDiv4>
         <RMDiv4>
           <RoadMapTitle>Q2 2022</RoadMapTitle>
           <RoadMapContent>First "Chord Chapter"-accept off-chain assets as
-          collateral. Migrate data server from traditional IDC to IPFS
+            collateral. Migrate data server from traditional IDC to IPFS
             network to realize fully decentralization.</RoadMapContent>
         </RMDiv4>
       </RoadMap>
@@ -979,8 +1091,7 @@ function App() {
 
       <RoadMap>
         <RMDiv5>
-          <VerticalLine2></VerticalLine2>
-          <Circle></Circle>
+          <VerticalLine color="yes"/><Circle/>
         </RMDiv5>
         <RMDiv6>
           <RoadMapTitle>May 2021</RoadMapTitle>
@@ -988,19 +1099,17 @@ function App() {
         </RMDiv6>
 
         <RMDiv5>
-          <VerticalLine2></VerticalLine2>
-          <Circle></Circle>
+          <VerticalLine color="yes"/><Circle/>
         </RMDiv5>
         <RMDiv6>
           <RoadMapTitle>Q3 2021</RoadMapTitle>
           <RoadMapContent>Launch DUET’s own swap and lending modules;
-          dock dAssets with major global lending and trading protocol;
+            dock dAssets with major global lending and trading protocol;
             expand the issuance to more permissionless chains.</RoadMapContent>
         </RMDiv6>
 
         <RMDiv5>
-          <VerticalLine2></VerticalLine2>
-          <Circle></Circle>
+          <VerticalLine color="yes"/><Circle/>
         </RMDiv5>
         <RMDiv6>
           <RoadMapTitle>Q1 2022</RoadMapTitle>
@@ -1008,27 +1117,95 @@ function App() {
             the goal of ‘global coverage in-one-wallet’</RoadMapContent>
         </RMDiv6>
       </RoadMap>
+      <Space height={200} mHeight={1.8}/>
+      <ContentTitle>
+        <span>Investors</span>
+      </ContentTitle>
 
-      <CenterTitle>
-        <CTBigText>Receive updates</CTBigText>
-        <CTSmallText>Receive updates</CTSmallText>
-      </CenterTitle>
+      <PcPartners>
+        <img width="320px" height="166px" src={investor1} alt=""/>
+        <img width="320px" height="166px" src={investor2} alt=""/>
+        <img width="320px" height="166px" src={investor3} alt=""/>
+        <img width="320px" height="166px" src={investor4} alt=""/>
+        <img width="320px" height="166px" src={investor5} alt=""/>
+        <img width="320px" height="166px" src={investor6} alt=""/>
+        <img width="320px" height="166px" src={investor7} alt=""/>
+        <img width="320px" height="166px" src={investor8} alt=""/>
+        <img width="320px" height="166px" src={investor9} alt=""/>
+        <img width="320px" height="166px" src={investor10} alt=""/>
+        <img width="320px" height="166px" src={investor11} alt=""/>
+      </PcPartners>
+
+      <MobilePartners>
+        <img src={investor1} alt=""/>
+        <img src={investor2} alt=""/>
+        <img src={investor3} alt=""/>
+        <img src={investor4} alt=""/>
+        <img src={investor5} alt=""/>
+        <img src={investor6} alt=""/>
+        <img src={investor7} alt=""/>
+        <img src={investor8} alt=""/>
+        <img src={investor9} alt=""/>
+        <img src={investor10} alt=""/>
+        <img src={investor11} alt=""/>
+      </MobilePartners>
+
+      {/* <Space height={160} mHeight={1.8}/> */}
+      {/* <ContentTitle>
+        <span>News</span>
+      </ContentTitle> */}
+
+      {/* <NewsContainer>
+        <NewsItem>
+          <img src={news1} alt=""/>
+          <News>Duet protocol is a synthetic asset protocol that
+            allows traditional assets to migrate to high-growth </News>
+          <NewsDate>April 13</NewsDate>
+        </NewsItem>
+        <NewsItem>
+          <img src={news2} alt=""/>
+          <News>Duet protocol is a synthetic asset protocol that
+            allows traditional assets to migrate to high-growth </News>
+          <NewsDate>April 13</NewsDate>
+        </NewsItem>
+        <NewsItem>
+          <img src={news3} alt=""/>
+          <News>Duet protocol is a synthetic asset protocol that
+            allows traditional assets to migrate to high-growth </News>
+          <NewsDate>April 13</NewsDate>
+        </NewsItem>
+        <NewsItem>
+          <img src={news4} alt=""/>
+          <News>Duet protocol is a synthetic asset protocol that
+            allows traditional assets to migrate to high-growth </News>
+          <NewsDate>April 13</NewsDate>
+        </NewsItem>
+      </NewsContainer> */}
+
+      <Space height={200} mHeight={1.8}/>
+      <ContentTitleForRU>
+        <span>Receive updates</span>
+      </ContentTitleForRU>
 
       <Submit>
         <SubmitInput onChange={event => setEmail(event.target.value)}
-          placeholder="Enter Your Email" type="text" />
+                     placeholder="Enter Your Email" type="text"/>
         <SubmitButton onClick={() => submit(email)}>Submit</SubmitButton>
       </Submit>
 
-      <Media>
-        <MediaIcon><img width="32" src={fb} alt="fb" onClick={goFacebook} /></MediaIcon>
-        <MediaIcon><img width="32" src={twitter} alt="twitter" onClick={goTwitter} /></MediaIcon>
-        <MediaIcon><img width="32" src={medium} alt="medium" onClick={goMedium} /></MediaIcon>
-        <MediaIcon><img width="32" src={telegram} alt="telegram" onClick={goTelegram} /></MediaIcon>
-        <MediaIcon><img width="32" src={weibo} alt="weibo" onClick={goWeibo} /></MediaIcon>
-      </Media>
+      <Space height={200} mHeight={1.8}/>
+      <FlexLayout justify="space-between">
+        <Media>
+          <MediaIcon><img width="32" src={fb} alt="fb" onClick={goFacebook}/></MediaIcon>
+          <MediaIcon><img width="32" src={twitter} alt="twitter" onClick={goTwitter}/></MediaIcon>
+          <MediaIcon><img width="32" src={medium} alt="medium" onClick={goMedium}/></MediaIcon>
+          <MediaIcon><img width="32" src={telegram} alt="telegram"
+                          onClick={goTelegram}/></MediaIcon>
+          <MediaIcon><img width="32" src={weibo} alt="weibo" onClick={goWeibo}/></MediaIcon>
+        </Media>
 
-      <Copyright>@2021 Copyrights by Duet All Rights Reserved.</Copyright>
+        <Copyright>@2021 Copyrights by Duet All Rights Reserved.</Copyright>
+      </FlexLayout>
     </Body>
   );
 }
@@ -1062,6 +1239,14 @@ function goWeibo() {
   window.open('https://weibo.com/u/7582624963');
 }
 
+function goEthWebApp() {
+  window.open('https://eth-duet.on.fleek.co/');
+}
+
+function openWhitePaper() {
+  window.open('https://duet.finance/doc/Duet-Protocol-White-Paper.pdf');
+}
+
 function checkEmail(email: string) {
 
   var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
@@ -1078,21 +1263,18 @@ function checkEmail(email: string) {
   }
 }
 
-function openWhitePaper() {
-  window.open('https://duet.finance/doc/Duet-Protocol-White-Paper.pdf');
-}
-
 //----------------------------------------------------------------
 // TEMP SOLUTION
 let baseUrl = 'https://api.nftbazaar.org'
+
 async function saveEmail(email: string) {
-  let batch = { email: email }
+  let batch = {email: email}
   let response: Response
   let url = baseUrl + '/dSubscribe'
   try {
     response = await fetch(url, {
       method: 'POST',
-      headers: { 'content-type': 'application/json', accept: 'application/json' },
+      headers: {'content-type': 'application/json', accept: 'application/json'},
       body: JSON.stringify(batch)
     })
 
@@ -1104,7 +1286,5 @@ async function saveEmail(email: string) {
     return
   }
 }
+
 //----------------------------------------------------------------
-
-
-export default App;
